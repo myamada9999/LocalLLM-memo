@@ -6,46 +6,51 @@
 
 Run a local LLM on an NVIDIA GH200 Linux server and expose it as an OpenAI-compatible API with vLLM.
 
-Use **Cline Desktop on Windows** as the agent UI, while keeping both model inference and source-code work on the GH200 machine.
+Use **Cline Desktop on Windows** as the agent UI. The LLM server and the server operated by the coding agent are **separate machines**.
 
-- **LLM inference:** GH200 + vLLM + Qwen3.8-27B-FP8
-- **Agent workspace:** GH200 Linux filesystem
-- **Agent access:** Cline Desktop Remote SSH
-- **LLM API access:** SSH port forwarding from Windows
-- **Source code:** stays on GH200
+- **LLM inference server:** GH200 + vLLM + Qwen3.8-27B-FP8
+- **Agent target server:** a separate Linux development server
+- **Agent workspace:** filesystem on the remote development server
+- **Agent access:** Cline Desktop Remote SSH to the development server
+- **LLM API access:** SSH port forwarding from Windows to the GH200 LLM server
+- **Source code:** stays on the remote development server; Cline sends only the required context to the local LLM API
 
 ---
 
 ## Recommended architecture
 
 ```text
-Windows PC
-┌──────────────────────────────────────────┐
-│ Cline Desktop                            │
-│                                          │
-│ 1. OpenAI-compatible API                 │
-│    http://127.0.0.1:18000/v1             │
-│             │                            │
-│             │ SSH Port Forward           │
-│             └───────────────────┐        │
-│                                 │        │
-│ 2. Remote SSH                   │        │
-│    Cline ───────────────────────┼────┐   │
-└─────────────────────────────────┼────┼───┘
-                                  │    │
-                                  ▼    ▼
-                     GH200 Linux Server
-             ┌────────────────────────────────┐
-             │ vLLM :8000                    │
-             │     ↓                          │
-             │ Qwen3.8-27B-FP8               │
-             │     ↓                          │
-             │ GH200                          │
-             │                                │
-             │ ~/workspace/...                │
-             │ git / gcc / cmake / python    │
-             └────────────────────────────────┘
+                         Windows PC
+                  ┌──────────────────────┐
+                  │ Cline Desktop        │
+                  │                      │
+                  │ Agent UI/controller  │
+                  └───────┬───────┬──────┘
+                          │       │
+             LLM API      │       │ Remote SSH
+       localhost:18000    │       │
+                          │       │
+                 SSH tunnel       │
+                          │       │
+                          ▼       ▼
+             GH200 LLM Server     Remote Development Server
+          ┌───────────────────┐   ┌────────────────────────┐
+          │ vLLM :8000        │   │ source code / repo     │
+          │      ↓            │   │ git / build / test     │
+          │ Qwen3.8-27B-FP8   │   │ tools / runtime        │
+          │      ↓            │   │                        │
+          │ GH200             │   │ Cline Remote SSH target│
+          └───────────────────┘   └────────────────────────┘
 ```
+
+The key point is that there are **two independent connections** from Windows:
+
+1. **Windows → GH200 LLM server** for inference
+2. **Windows → remote development server** for file/terminal/git/build operations
+
+The GH200 server does not need to contain the source-code workspace.
+
+---
 
 ## Initial settings
 
@@ -59,8 +64,8 @@ Windows PC
 | vLLM listen address | `127.0.0.1:8000` |
 | Windows endpoint | `127.0.0.1:18000` |
 | Agent UI | Cline Desktop |
-| Workspace | GH200 side |
-| Authentication | SSH key + vLLM API key |
+| Workspace | Separate remote development server |
+| Authentication | SSH key(s) + vLLM API key |
 
 ---
 
@@ -190,7 +195,7 @@ If this works, the basic LLM server is ready.
 
 ---
 
-# 6. Create an SSH tunnel from Windows
+# 6. Create an SSH tunnel from Windows to the GH200 LLM server
 
 From PowerShell:
 
@@ -218,7 +223,12 @@ http://127.0.0.1:18000/v1
 
 ---
 
-# 7. Configure SSH key authentication
+# 7. Configure SSH access for both servers
+
+There are two SSH destinations:
+
+- **GH200 LLM server**: used for the API tunnel and LLM administration
+- **Remote development server**: used by Cline Remote SSH for source-code work
 
 Create a key on Windows if needed:
 
@@ -226,40 +236,56 @@ Create a key on Windows if needed:
 ssh-keygen -t ed25519
 ```
 
-Register the public key in:
+Register the public key on both servers as appropriate.
 
-```text
-~/.ssh/authorized_keys
+A convenient Windows SSH config is:
+
+```sshconfig
+Host gh200-llm
+    HostName <gh200-host>
+    User <gh200-user>
+    IdentityFile C:\Users\<user>\.ssh\id_ed25519
+
+Host cline-dev
+    HostName <development-server-host>
+    User <development-user>
+    IdentityFile C:\Users\<user>\.ssh\id_ed25519
 ```
 
-on the GH200 server.
-
-Before using Cline Remote SSH, verify normal SSH access:
+Verify both connections before using Cline:
 
 ```powershell
-ssh <user>@<gh200-host>
+ssh gh200-llm
+ssh cline-dev
+```
+
+Then the API tunnel can be created with:
+
+```powershell
+ssh -N -L 18000:127.0.0.1:8000 gh200-llm
 ```
 
 Check that:
 
-- key-based login works without interactive password entry,
-- the host key is registered in Windows `known_hosts`,
-- the intended GH200 workspace is accessible.
+- key-based login works for both servers,
+- both host keys are registered in Windows `known_hosts`,
+- the GH200 server can run and expose vLLM locally,
+- the remote development server contains the intended workspace and build environment.
 
 ---
 
 # 8. Configure Cline Desktop Remote SSH
 
-Add the GH200 as a remote environment in Cline Desktop.
+Add the **separate remote development server** as the Remote Environment in Cline Desktop. Do not point Cline Remote SSH at the GH200 server unless that machine is also intentionally being used as a development host.
 
 Example:
 
 ```text
 Host:
-<gh200-host>
+<development-server-host>
 
 User:
-<user>
+<development-user>
 
 Identity:
 C:\Users\<user>\.ssh\id_ed25519
@@ -268,7 +294,7 @@ C:\Users\<user>\.ssh\id_ed25519
 Workspace example:
 
 ```text
-/home/<user>/workspace
+/home/<development-user>/workspace
 ```
 
 Use a Cline Desktop version that includes the Remote SSH fixes introduced in 0.0.35 or later. Prefer the latest stable release available in the environment.
@@ -312,34 +338,34 @@ Context window:
 # 10. How the agent works
 
 ```text
-                    Windows
-                Cline Desktop
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-     LLM request            Agent tools
-          │                     │
-          ▼                     ▼
-     SSH tunnel            Remote SSH
-          │                     │
-          ▼                     ▼
-        vLLM                workspace
-          │                 git/build/test
-          ▼
- Qwen3.8-27B-FP8
-          │
-          ▼
-        GH200
+                         Windows
+                     Cline Desktop
+                          │
+               ┌──────────┴──────────┐
+               │                     │
+          LLM request            Agent tools
+               │                     │
+               ▼                     ▼
+          SSH tunnel            Remote SSH
+               │                     │
+               ▼                     ▼
+        GH200 LLM Server      Development Server
+             vLLM             workspace / git /
+               │              build / test / runtime
+               ▼
+      Qwen3.8-27B-FP8
 ```
 
-The two paths are intentionally separate:
+The two paths are intentionally separate.
 
 ### Reasoning path
 
 ```text
-Cline
+Cline on Windows
   ↓
-OpenAI-compatible API
+SSH tunnel
+  ↓
+vLLM on GH200
   ↓
 Qwen3.8
   ↓
@@ -349,27 +375,38 @@ Decide the next tool / command
 ### Execution path
 
 ```text
-Cline
+Cline on Windows
   ↓
 Remote SSH
   ↓
-GH200
+Separate development server
   ↓
 read / edit / git / build / test
 ```
 
-Windows is primarily the UI / controller. Model inference and engineering work stay on the GH200 side.
+The source code and build environment remain on the development server. The model runs on the GH200 server and receives the context that Cline sends through the OpenAI-compatible API.
 
 ---
 
 # 11. Recommended validation sequence
 
-## Step 1: SSH only
+## Step 1: Verify both SSH paths
+
+For the GH200 LLM server:
+
+```bash
+uname -m
+nvidia-smi
+curl http://127.0.0.1:8000/v1/models \
+  -H "Authorization: Bearer $VLLM_API_KEY"
+```
+
+For the remote development server:
 
 ```bash
 pwd
-uname -m
-nvidia-smi
+uname -a
+git --version
 ```
 
 ## Step 2: Read-only agent task
@@ -468,7 +505,8 @@ Do not commit this environment file to the repository.
 - Use SSH public-key authentication.
 - Use a vLLM API key.
 - Do not store API keys, private keys, passwords, or credentials in GitHub.
-- Keep company source code on the GH200 side.
+- Keep company source code on the separate remote development server.
+- The GH200 LLM server should not need a copy of the repository; only the context sent by Cline is processed there.
 - Avoid sending internal code to external LLM APIs.
 - Limit the agent's writable workspace.
 - Start validation with read-only tasks.
@@ -531,30 +569,26 @@ This allows the GH200 local model to serve both coding-agent and GUI-agent exper
 # Target end state
 
 ```text
-                 Windows
-              Cline Desktop
-                     │
-          ┌──────────┴──────────┐
-          │                     │
-     OpenAI API             Remote SSH
-          │                     │
- localhost:18000                │
-          │                     │
-      SSH tunnel                │
-          │                     │
-          └─────────┬───────────┘
-                    │
-                    ▼
-                  GH200
-      ┌────────────────────────────┐
-      │ systemd                    │
-      │   ↓                        │
-      │ vLLM :8000                 │
-      │   ↓                        │
-      │ Qwen3.8-27B-FP8           │
-      │                            │
-      │ Cline Remote Environment  │
-      │   ↓                        │
-      │ workspace / git / build   │
-      └────────────────────────────┘
+                         Windows
+                     Cline Desktop
+                          │
+               ┌──────────┴──────────┐
+               │                     │
+          OpenAI API             Remote SSH
+               │                     │
+        localhost:18000              │
+               │                     │
+          SSH tunnel                 │
+               │                     │
+               ▼                     ▼
+        GH200 LLM Server      Development Server
+    ┌────────────────────┐   ┌───────────────────────┐
+    │ systemd            │   │ source repository     │
+    │   ↓                │   │ build/test/runtime    │
+    │ vLLM :8000         │   │                       │
+    │   ↓                │   │ Cline Remote SSH      │
+    │ Qwen3.8-27B-FP8    │   │ workspace             │
+    └────────────────────┘   └───────────────────────┘
 ```
+
+This separation allows the GH200 machine to be managed as a dedicated inference server while Cline operates a different Linux server as the coding/execution environment.
