@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1190" viewBox="0 0 1680 1190" role="img" aria-labelledby="title desc">
+  <title id="title">dots：クラウドで働き、必要なときに相談するAIエージェント</title>
+  <desc id="desc">ユーザーが目標と権限を与えると、dotsは専用のクラウドコンピューターで仕事を進め、WorkやCodexに作業を委任する。記憶と進捗を引き継ぎ、結果を確認して、通知や判断の相談をユーザーに届ける。クラウドで完結する仕事ではユーザーのPCを占有しない。図のA2Aは一般的なエージェント間連携を指し、特定のA2Aプロトコル採用を示すものではない。</desc>
+  <defs>
+    <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#0877d1"/></marker>
+    <marker id="green-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#169447"/></marker>
+    <marker id="purple-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#7160c8"/></marker>
+    <style>
+      text{font-family:"Noto Sans JP","Noto Sans CJK JP","Yu Gothic",Meiryo,"IPAexGothic",sans-serif;fill:#132238}
+      .title{font-size:46px;font-weight:800}.sub{font-size:25px;fill:#53657c}
+      .heading{font-size:30px;font-weight:800}.body{font-size:23px}.small{font-size:20px;fill:#53657c}
+      .label{font-size:21px;font-weight:700}.note{font-size:17px;fill:#53657c}
+      .blue{fill:#0877d1}.green{fill:#169447}.purple{fill:#7160c8}.white{fill:#fff}
+      .line{fill:none;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1680" height="1190" fill="#f7fafc"/>
+  <rect x="50" y="43" width="8" height="107" rx="4" fill="#0877d1"/>
+  <text x="79" y="87" class="title">dots：クラウドで働き、必要なときに相談するAI</text>
+  <text x="80" y="133" class="sub">目標を任せる → エージェント同士で連携して進める → 結果・判断事項が届く</text>
+  <rect x="1438" y="165" width="192" height="34" rx="17" fill="#eaf1f7"/>
+  <text x="1534" y="188" text-anchor="middle" class="note">2026年10月・概念図</text>
+
+  <!-- User stays in control and keeps using their own devices. -->
+  <rect x="50" y="220" width="390" height="680" rx="24" fill="#fff" stroke="#b8d9c4" stroke-width="2"/>
+  <rect x="50" y="220" width="390" height="76" rx="24" fill="#169447"/>
+  <rect x="50" y="265" width="390" height="31" fill="#169447"/>
+  <text x="245" y="269" class="heading white" text-anchor="middle">あなた</text>
+  <circle cx="245" cy="347" r="23" fill="#e8f5ec" stroke="#169447" stroke-width="3"/>
+  <path d="M207 402 C209 366 281 366 283 402" class="line" stroke="#169447" stroke-width="4"/>
+  <rect x="108" y="426" width="230" height="141" rx="11" fill="#eef6fc" stroke="#314e6f" stroke-width="4"/>
+  <rect x="121" y="439" width="204" height="111" rx="3" fill="#fff"/>
+  <rect x="136" y="454" width="174" height="14" rx="5" fill="#d8e8f4"/>
+  <rect x="136" y="482" width="73" height="53" rx="5" fill="#e8f5ec"/>
+  <path d="M222 489 H297 M222 508 H287 M222 527 H273" class="line" stroke="#a0b6c9" stroke-width="6"/>
+  <path d="M91 569 H354 L368 585 H78 Z" fill="#314e6f"/>
+  <rect x="330" y="488" width="53" height="102" rx="9" fill="#fff" stroke="#314e6f" stroke-width="3"/>
+  <rect x="339" y="504" width="35" height="65" rx="4" fill="#e8f5ec"/>
+  <circle cx="357" cy="579" r="3" fill="#314e6f"/>
+  <text x="245" y="631" text-anchor="middle" class="body" font-weight="700">PCはいつも通り使える</text>
+  <text x="245" y="665" text-anchor="middle" class="small">クラウド作業中も占有されない</text>
+  <rect x="78" y="705" width="334" height="106" rx="16" fill="#e8f5ec"/>
+  <text x="98" y="740" class="label green">目標と任せる範囲を伝える</text>
+  <text x="98" y="776" class="body">「この仕事を進めておいて」</text>
+  <text x="245" y="855" text-anchor="middle" class="small">重要な判断・承認はあなたが行う</text>
+
+  <!-- Goal and notifications flow in opposite directions. -->
+  <text x="550" y="355" text-anchor="middle" class="label blue">目標・指示</text>
+  <text x="550" y="385" text-anchor="middle" class="small">方向修正・承認</text>
+  <path d="M448 414 H650" class="line" stroke="#0877d1" stroke-width="4" marker-end="url(#blue-arrow)"/>
+  <path d="M650 548 H450" class="line" stroke="#169447" stroke-width="4" marker-end="url(#green-arrow)"/>
+  <text x="550" y="590" text-anchor="middle" class="label green">必要なときに</text>
+  <text x="550" y="624" text-anchor="middle" class="label green">通知・相談</text>
+  <text x="550" y="674" text-anchor="middle" class="small">ChatGPT</text>
+  <text x="550" y="704" text-anchor="middle" class="small">Slack / Teams</text>
+
+  <!-- Cloud environment: conceptual, not a statement about its VM implementation. -->
+  <rect x="660" y="220" width="970" height="680" rx="24" fill="#eef6fc" stroke="#a6cce8" stroke-width="2"/>
+  <path d="M701 272 C690 272 689 254 701 251 C702 234 725 228 735 244 C751 239 762 252 759 265 C774 266 772 286 757 286 H703 C690 286 689 273 701 272Z" fill="#0877d1"/>
+  <text x="789" y="270" class="heading blue">専用のクラウド作業環境</text>
+  <rect x="1391" y="243" width="204" height="41" rx="20" fill="#dceefb"/>
+  <text x="1493" y="270" text-anchor="middle" class="label blue">PC・ブラウザー</text>
+  <text x="701" y="312" class="small">クラウドで完結する仕事なら、あなたのPCがオフでも続けられる</text>
+
+  <!-- Dot coordinates ongoing work. -->
+  <rect x="701" y="348" width="324" height="331" rx="20" fill="#fff" stroke="#7160c8" stroke-width="2"/>
+  <rect x="725" y="374" width="72" height="54" rx="21" fill="#ede9fb"/>
+  <circle cx="747" cy="398" r="5" fill="#7160c8"/><circle cx="775" cy="398" r="5" fill="#7160c8"/>
+  <path d="M750 412 Q761 419 772 412" class="line" stroke="#7160c8" stroke-width="2"/>
+  <text x="815" y="411" font-size="43" font-weight="800" class="purple">dots</text>
+  <text x="725" y="463" class="label purple">継続して仕事を管理</text>
+  <path d="M725 482 H1000" class="line" stroke="#e6e0f4" stroke-width="2"/>
+  <text x="727" y="522" class="body">目標・経緯を記憶</text>
+  <text x="727" y="558" class="body">次の作業・再開時期を判断</text>
+  <text x="727" y="594" class="body">委任した作業の結果を確認</text>
+  <text x="727" y="630" class="body">必要な判断をあなたに相談</text>
+
+  <!-- Agent-to-agent collaboration is generic, not a protocol claim. -->
+  <text x="1355" y="381" text-anchor="middle" class="label purple">A2A連携：得意なエージェントへ委任</text>
+  <rect x="1131" y="401" width="464" height="112" rx="16" fill="#fff" stroke="#90c3e9" stroke-width="2"/>
+  <rect x="1152" y="424" width="62" height="62" rx="12" fill="#e6f2fb"/>
+  <path d="M1169 438 H1195 V473 H1169Z M1175 447 H1189 M1175 455 H1189 M1175 463 H1185" class="line" stroke="#0877d1" stroke-width="2"/>
+  <text x="1233" y="443" class="heading blue">ChatGPT Work</text>
+  <text x="1233" y="480" class="small">資料作成・分析などの作業</text>
+  <path d="M1035 429 H1121" class="line" stroke="#7160c8" stroke-width="3" marker-end="url(#purple-arrow)"/>
+  <text x="1077" y="417" text-anchor="middle" font-size="17" class="purple">委任</text>
+  <path d="M1121 487 H1035" class="line" stroke="#169447" stroke-width="3" marker-end="url(#green-arrow)"/>
+  <text x="1077" y="477" text-anchor="middle" font-size="17" class="green">結果</text>
+  <rect x="1131" y="545" width="464" height="112" rx="16" fill="#fff" stroke="#99cead" stroke-width="2"/>
+  <rect x="1152" y="568" width="62" height="62" rx="12" fill="#e8f5ec"/>
+  <path d="M1177 583 L1166 598 L1177 613 M1190 583 L1201 598 L1190 613" class="line" stroke="#169447" stroke-width="3"/>
+  <text x="1233" y="587" class="heading green">Codex</text>
+  <text x="1233" y="624" class="small">コード作成・修正・検証</text>
+  <path d="M1035 572 H1121" class="line" stroke="#7160c8" stroke-width="3" marker-end="url(#purple-arrow)"/>
+  <text x="1077" y="561" text-anchor="middle" font-size="17" class="purple">委任</text>
+  <path d="M1121 631 H1035" class="line" stroke="#169447" stroke-width="3" marker-end="url(#green-arrow)"/>
+  <text x="1077" y="620" text-anchor="middle" font-size="17" class="green">結果</text>
+
+  <!-- Available tools: dot can also use them directly. -->
+  <path d="M863 682 V719" class="line" stroke="#0877d1" stroke-width="3" marker-end="url(#blue-arrow)"/>
+  <rect x="701" y="731" width="894" height="122" rx="17" fill="#fff" stroke="#c8dfea" stroke-width="2"/>
+  <text x="725" y="768" class="label blue">dots自身も、接続したツールで作業する</text>
+  <rect x="725" y="787" width="188" height="42" rx="9" fill="#eef6fc"/><text x="819" y="815" text-anchor="middle" class="small">ブラウザー</text>
+  <rect x="930" y="787" width="188" height="42" rx="9" fill="#eef6fc"/><text x="1024" y="815" text-anchor="middle" class="small">コード・コマンド</text>
+  <rect x="1135" y="787" width="188" height="42" rx="9" fill="#eef6fc"/><text x="1229" y="815" text-anchor="middle" class="small">ファイル・資料</text>
+  <rect x="1340" y="787" width="230" height="42" rx="9" fill="#eef6fc"/><text x="1455" y="815" text-anchor="middle" class="small">接続アプリ・プラグイン</text>
+  <text x="1148" y="882" text-anchor="middle" class="note">任せた範囲と権限に従って作業。必要な承認はユーザーに確認。</text>
+
+  <!-- Three central takeaways. -->
+  <rect x="50" y="928" width="510" height="139" rx="17" fill="#fff" stroke="#dce6ed"/>
+  <circle cx="87" cy="966" r="17" fill="#e6f2fb"/><text x="87" y="973" text-anchor="middle" class="label blue">1</text>
+  <text x="117" y="975" class="heading blue">クラウドで作業</text>
+  <text x="80" y="1015" class="body">ユーザーのPCを占有しない</text>
+  <text x="80" y="1045" class="small">専用の作業環境で実行する</text>
+  <rect x="585" y="928" width="510" height="139" rx="17" fill="#fff" stroke="#dce6ed"/>
+  <circle cx="622" cy="966" r="17" fill="#ede9fb"/><text x="622" y="973" text-anchor="middle" class="label purple">2</text>
+  <text x="652" y="975" class="heading purple">連携して継続</text>
+  <text x="615" y="1015" class="body">記憶・進捗を引き継いで進める</text>
+  <text x="615" y="1045" class="small">待機・再開し、他のエージェントにも委任</text>
+  <rect x="1120" y="928" width="510" height="139" rx="17" fill="#fff" stroke="#dce6ed"/>
+  <circle cx="1157" cy="966" r="17" fill="#e8f5ec"/><text x="1157" y="973" text-anchor="middle" class="label green">3</text>
+  <text x="1187" y="975" class="heading green">通知・相談が届く</text>
+  <text x="1150" y="1015" class="body">結果や判断が必要なことを知らせる</text>
+  <text x="1150" y="1045" class="small">任せた仕事に合うタイミングで連絡</text>
+
+  <text x="50" y="1102" class="note">※ A2Aは一般的なエージェント間連携の意味。特定のA2Aプロトコル採用や、内部のVM実装を示す図ではありません。</text>
+  <text x="50" y="1130" class="note">※ 常時対応＝常に推論し続ける意味ではなく、必要に応じて待機・再開。ローカルPCを使う仕事はPCの接続・オンライン状態が必要です。</text>
+  <a href="https://learn.chatgpt.com/docs/dots"><text x="50" y="1164" class="note">出典：OpenAI公式「Meet dots」　learn.chatgpt.com/docs/dots</text></a>
+</svg>
