@@ -1,178 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1010" viewBox="0 0 1800 1010">
-<rect width="100%" height="100%" fill="#f8fbff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="980" viewBox="0 0 1680 980">
+<rect width="100%" height="100%" fill="#f7fafc"/>
 <style>
-text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;fill:#15243b}
-.title{font-size:38px;font-weight:800}
-.sub{font-size:21px;font-weight:600;fill:#41536b}
-.ph{font-size:35px;font-weight:800;fill:#fff}
-.ps{font-size:17px;font-weight:600;fill:#fff}
-.lbl{font-size:16px;font-weight:700}
-.mark{font-size:20px;font-weight:900}
-.val{font-size:16px;font-weight:600}
-.cardtitle{font-size:20px;font-weight:800;fill:#fff}
-.cardtext{font-size:16px;font-weight:600}
-.section{font-size:24px;font-weight:800}
-.small{font-size:14px;font-weight:600;fill:#516176}
+text { font-family: -apple-system,BlinkMacSystemFont,Segoe UI,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif; fill:#132238; }
+.h1 { font-size: 38px; font-weight: 800; }
+.sub { font-size: 20px; font-weight: 600; fill:#53657c; }
+.ph { font-size: 30px; font-weight: 800; fill:white; }
+.ps { font-size: 16px; font-weight: 600; fill:white; }
+.lbl { font-size: 15px; font-weight: 700; }
+.mark { font-size: 20px; font-weight: 900; }
+.val { font-size: 13.5px; font-weight: 600; }
+.cardt { font-size: 14px; font-weight: 600; fill:white; }
+.noteh { font-size: 15px; font-weight: 800; }
+.notet { font-size: 13px; font-weight: 600; fill:#314155; }
+.sec { font-size: 22px; font-weight: 800; }
+.small { font-size: 14px; font-weight: 600; fill:#58697d; }
 </style>
-<text x="900" y="46" text-anchor="middle" class="title">Codex Desktop / Cline Desktop / Claude Cowork 比較 — 2026年10月</text>
-<text x="900" y="76" text-anchor="middle" class="sub">Windows環境のAIエージェント比較：Local LLM・音声入力・自動化・ブラウザ操作・OSS性</text><rect x="24" y="92" width="572" height="728" rx="14" fill="#fff" stroke="#0877d1" stroke-width="2"/>
-  <rect x="24" y="92" width="572" height="78" rx="14" fill="#0877d1"/>
-  <rect x="24" y="156" width="572" height="14" fill="#0877d1"/>
-  <text x="48" y="135" class="ph">Codex Desktop</text>
-  <text x="50" y="158" class="ps">OpenAI統合の開発エージェント</text><rect x="25" y="170" width="570" height="48" fill="#eef7ff"/>
-    <line x1="24" y1="218" x2="596" y2="218" stroke="#d7e0ea"/>
-    <text x="42" y="200" class="lbl">Windows対応</text>
-    <text x="262" y="201" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="298" y="199" class="val">正式対応</text><rect x="25" y="218" width="570" height="48" fill="#ffffff"/>
-    <line x1="24" y1="266" x2="596" y2="266" stroke="#d7e0ea"/>
-    <text x="42" y="248" class="lbl">主な用途</text>
-    <text x="262" y="249" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="298" y="247" class="val">OpenAI統合の開発エージェント</text><rect x="25" y="266" width="570" height="48" fill="#eef7ff"/>
-    <line x1="24" y1="314" x2="596" y2="314" stroke="#d7e0ea"/>
-    <text x="42" y="296" class="lbl">対応モデル / Provider</text>
-    <text x="262" y="297" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="298" y="295" class="val">OpenAIモデル最適化 / custom providerも可</text><rect x="25" y="314" width="570" height="48" fill="#ffffff"/>
-    <line x1="24" y1="362" x2="596" y2="362" stroke="#d7e0ea"/>
-    <text x="42" y="344" class="lbl">Local LLM</text>
-    <text x="262" y="345" class="mark" fill="#e69b00" style="fill:#e69b00">△</text>
-    <text x="298" y="343" class="val">可能だが主戦場ではない</text><rect x="25" y="362" width="570" height="48" fill="#eef7ff"/>
-    <line x1="24" y1="410" x2="596" y2="410" stroke="#d7e0ea"/>
-    <text x="42" y="392" class="lbl">音声入力 (STT)</text>
-    <text x="262" y="393" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="298" y="391" class="val">標準Voice / Dictation</text><rect x="25" y="410" width="570" height="48" fill="#ffffff"/>
-    <line x1="24" y1="458" x2="596" y2="458" stroke="#d7e0ea"/>
-    <text x="42" y="440" class="lbl">コード / ファイル / Terminal</text>
-    <text x="262" y="441" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="298" y="439" class="val">非常に強い</text><rect x="25" y="458" width="570" height="48" fill="#eef7ff"/>
-    <line x1="24" y1="506" x2="596" y2="506" stroke="#d7e0ea"/>
-    <text x="42" y="488" class="lbl">ブラウザ操作</text>
-    <text x="262" y="489" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="298" y="487" class="val">Browser / Computer Useが強い</text><rect x="25" y="506" width="570" height="48" fill="#ffffff"/>
-    <line x1="24" y1="554" x2="596" y2="554" stroke="#d7e0ea"/>
-    <text x="42" y="536" class="lbl">自動化・定期実行</text>
-    <text x="262" y="537" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="298" y="535" class="val">Automations対応</text><rect x="25" y="554" width="570" height="48" fill="#eef7ff"/>
-    <line x1="24" y1="602" x2="596" y2="602" stroke="#d7e0ea"/>
-    <text x="42" y="584" class="lbl">拡張性</text>
-    <text x="262" y="585" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="298" y="583" class="val">Skills / MCP / 周辺連携</text><rect x="25" y="602" width="570" height="48" fill="#ffffff"/>
-    <line x1="24" y1="650" x2="596" y2="650" stroke="#d7e0ea"/>
-    <text x="42" y="632" class="lbl">OSS / ユーザー修正</text>
-    <text x="262" y="633" class="mark" fill="#e69b00" style="fill:#e69b00">△</text>
-    <text x="298" y="631" class="val">Codex CLIはOSS / Desktop本体はクローズド</text><rect x="36" y="662" width="548" height="68" rx="10" fill="#0877d1"/>
-  <text x="52" y="689" class="cardtitle">主な強み</text>
-  <foreignObject x="50" y="696" width="520" height="32"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:white;line-height:1.25">OpenAIモデルとの一体感、Voice、Computer Use、マルチエージェント</div></foreignObject>
-  <rect x="36" y="740" width="548" height="66" rx="10" fill="#eef7ff" stroke="#0877d1" stroke-width="1"/>
-  <text x="52" y="764" class="lbl" style="fill:#0877d1">注意点</text>
-  <foreignObject x="128" y="751" width="442" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 14px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:#27384f;line-height:1.25">Desktop本体の不具合をユーザーが直接修正して配布する用途には不向き</div></foreignObject><rect x="614" y="92" width="572" height="728" rx="14" fill="#fff" stroke="#169447" stroke-width="2"/>
-  <rect x="614" y="92" width="572" height="78" rx="14" fill="#169447"/>
-  <rect x="614" y="156" width="572" height="14" fill="#169447"/>
-  <text x="638" y="135" class="ph">Cline Desktop</text>
-  <text x="640" y="158" class="ps">モデル非依存のオープンなAgent Harness</text><rect x="615" y="170" width="570" height="48" fill="#effbf3"/>
-    <line x1="614" y1="218" x2="1186" y2="218" stroke="#d7e0ea"/>
-    <text x="632" y="200" class="lbl">Windows対応</text>
-    <text x="852" y="201" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="199" class="val">対応</text><rect x="615" y="218" width="570" height="48" fill="#ffffff"/>
-    <line x1="614" y1="266" x2="1186" y2="266" stroke="#d7e0ea"/>
-    <text x="632" y="248" class="lbl">主な用途</text>
-    <text x="852" y="249" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="247" class="val">モデル非依存のエージェントハーネス</text><rect x="615" y="266" width="570" height="48" fill="#effbf3"/>
-    <line x1="614" y1="314" x2="1186" y2="314" stroke="#d7e0ea"/>
-    <text x="632" y="296" class="lbl">対応モデル / Provider</text>
-    <text x="852" y="297" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="295" class="val">300+ models / 50+ providers級</text><rect x="615" y="314" width="570" height="48" fill="#ffffff"/>
-    <line x1="614" y1="362" x2="1186" y2="362" stroke="#d7e0ea"/>
-    <text x="632" y="344" class="lbl">Local LLM</text>
-    <text x="852" y="345" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="343" class="val">OpenAI互換 / Ollama / LM Studio等に強い</text><rect x="615" y="362" width="570" height="48" fill="#effbf3"/>
-    <line x1="614" y1="410" x2="1186" y2="410" stroke="#d7e0ea"/>
-    <text x="632" y="392" class="lbl">音声入力 (STT)</text>
-    <text x="852" y="393" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="888" y="391" class="val">Voice Inputあり</text><rect x="615" y="410" width="570" height="48" fill="#ffffff"/>
-    <line x1="614" y1="458" x2="1186" y2="458" stroke="#d7e0ea"/>
-    <text x="632" y="440" class="lbl">コード / ファイル / Terminal</text>
-    <text x="852" y="441" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="439" class="val">強い</text><rect x="615" y="458" width="570" height="48" fill="#effbf3"/>
-    <line x1="614" y1="506" x2="1186" y2="506" stroke="#d7e0ea"/>
-    <text x="632" y="488" class="lbl">ブラウザ操作</text>
-    <text x="852" y="489" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="888" y="487" class="val">ワークスペース / ブラウザ作業に強い</text><rect x="615" y="506" width="570" height="48" fill="#ffffff"/>
-    <line x1="614" y1="554" x2="1186" y2="554" stroke="#d7e0ea"/>
-    <text x="632" y="536" class="lbl">自動化・定期実行</text>
-    <text x="852" y="537" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="535" class="val">Scheduled tasks / cron</text><rect x="615" y="554" width="570" height="48" fill="#effbf3"/>
-    <line x1="614" y1="602" x2="1186" y2="602" stroke="#d7e0ea"/>
-    <text x="632" y="584" class="lbl">拡張性</text>
-    <text x="852" y="585" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="583" class="val">MCP Marketplace / Skills</text><rect x="615" y="602" width="570" height="48" fill="#ffffff"/>
-    <line x1="614" y1="650" x2="1186" y2="650" stroke="#d7e0ea"/>
-    <text x="632" y="632" class="lbl">OSS / ユーザー修正</text>
-    <text x="852" y="633" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="888" y="631" class="val">ソース公開。調査・修正・fork・PRがしやすい</text><rect x="626" y="662" width="548" height="68" rx="10" fill="#169447"/>
-  <text x="642" y="689" class="cardtitle">主な強み</text>
-  <foreignObject x="640" y="696" width="520" height="32"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:white;line-height:1.25">Local LLM適性、モデル選択の自由度、拡張性、ユーザー主導で不具合修正しやすい</div></foreignObject>
-  <rect x="626" y="740" width="548" height="66" rx="10" fill="#effbf3" stroke="#169447" stroke-width="1"/>
-  <text x="642" y="764" class="lbl" style="fill:#169447">注意点</text>
-  <foreignObject x="718" y="751" width="442" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 14px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:#27384f;line-height:1.25">品質は選ぶモデルとHarness設定に左右される。PC全体操作の統合度はCodexほど高くない</div></foreignObject><rect x="1204" y="92" width="572" height="728" rx="14" fill="#fff" stroke="#e85b0d" stroke-width="2"/>
-  <rect x="1204" y="92" width="572" height="78" rx="14" fill="#e85b0d"/>
-  <rect x="1204" y="156" width="572" height="14" fill="#e85b0d"/>
-  <text x="1228" y="135" class="ph">Claude Cowork</text>
-  <text x="1230" y="158" class="ps">ClaudeのKnowledge Work向けDesktop Agent</text><rect x="1205" y="170" width="570" height="48" fill="#fff5ee"/>
-    <line x1="1204" y1="218" x2="1776" y2="218" stroke="#d7e0ea"/>
-    <text x="1222" y="200" class="lbl">Windows対応</text>
-    <text x="1442" y="201" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="1478" y="199" class="val">対応</text><rect x="1205" y="218" width="570" height="48" fill="#ffffff"/>
-    <line x1="1204" y1="266" x2="1776" y2="266" stroke="#d7e0ea"/>
-    <text x="1222" y="248" class="lbl">主な用途</text>
-    <text x="1442" y="249" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="1478" y="247" class="val">ナレッジワーク向けDesktop Agent</text><rect x="1205" y="266" width="570" height="48" fill="#fff5ee"/>
-    <line x1="1204" y1="314" x2="1776" y2="314" stroke="#d7e0ea"/>
-    <text x="1222" y="296" class="lbl">対応モデル / Provider</text>
-    <text x="1442" y="297" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="1478" y="295" class="val">Claude中心</text><rect x="1205" y="314" width="570" height="48" fill="#ffffff"/>
-    <line x1="1204" y1="362" x2="1776" y2="362" stroke="#d7e0ea"/>
-    <text x="1222" y="344" class="lbl">Local LLM</text>
-    <text x="1442" y="345" class="mark" fill="#d61f2c" style="fill:#d61f2c">×</text>
-    <text x="1478" y="343" class="val">ローカルLLM主用途ではない</text><rect x="1205" y="362" width="570" height="48" fill="#fff5ee"/>
-    <line x1="1204" y1="410" x2="1776" y2="410" stroke="#d7e0ea"/>
-    <text x="1222" y="392" class="lbl">音声入力 (STT)</text>
-    <text x="1442" y="393" class="mark" fill="#e69b00" style="fill:#e69b00">△</text>
-    <text x="1478" y="391" class="val">主な訴求点ではない</text><rect x="1205" y="410" width="570" height="48" fill="#ffffff"/>
-    <line x1="1204" y1="458" x2="1776" y2="458" stroke="#d7e0ea"/>
-    <text x="1222" y="440" class="lbl">コード / ファイル / Terminal</text>
-    <text x="1442" y="441" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="1478" y="439" class="val">ローカルファイルは強い / コード特化ではない</text><rect x="1205" y="458" width="570" height="48" fill="#fff5ee"/>
-    <line x1="1204" y1="506" x2="1776" y2="506" stroke="#d7e0ea"/>
-    <text x="1222" y="488" class="lbl">ブラウザ操作</text>
-    <text x="1442" y="489" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="1478" y="487" class="val">組み込みブラウザでWeb作業に強い</text><rect x="1205" y="506" width="570" height="48" fill="#ffffff"/>
-    <line x1="1204" y1="554" x2="1776" y2="554" stroke="#d7e0ea"/>
-    <text x="1222" y="536" class="lbl">自動化・定期実行</text>
-    <text x="1442" y="537" class="mark" fill="#0b9a50" style="fill:#0b9a50">◎</text>
-    <text x="1478" y="535" class="val">長時間タスク / スケジュール対応</text><rect x="1205" y="554" width="570" height="48" fill="#fff5ee"/>
-    <line x1="1204" y1="602" x2="1776" y2="602" stroke="#d7e0ea"/>
-    <text x="1222" y="584" class="lbl">拡張性</text>
-    <text x="1442" y="585" class="mark" fill="#e69b00" style="fill:#e69b00">○</text>
-    <text x="1478" y="583" class="val">Connected apps / plugins</text><rect x="1205" y="602" width="570" height="48" fill="#ffffff"/>
-    <line x1="1204" y1="650" x2="1776" y2="650" stroke="#d7e0ea"/>
-    <text x="1222" y="632" class="lbl">OSS / ユーザー修正</text>
-    <text x="1442" y="633" class="mark" fill="#d61f2c" style="fill:#d61f2c">×</text>
-    <text x="1478" y="631" class="val">本体はクローズド。ユーザーが任意修正はできない</text><rect x="1216" y="662" width="548" height="68" rx="10" fill="#e85b0d"/>
-  <text x="1232" y="689" class="cardtitle">主な強み</text>
-  <foreignObject x="1230" y="696" width="520" height="32"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:white;line-height:1.25">ファイル・Web・接続アプリをまたぐ知識作業、進捗追跡、スケジュール実行</div></foreignObject>
-  <rect x="1216" y="740" width="548" height="66" rx="10" fill="#fff5ee" stroke="#e85b0d" stroke-width="1"/>
-  <text x="1232" y="764" class="lbl" style="fill:#e85b0d">注意点</text>
-  <foreignObject x="1308" y="751" width="442" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="font:600 14px -apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans JP',sans-serif;color:#27384f;line-height:1.25">Local LLM運用や開発者向けの深いコードワークではCline / Codexに劣る</div></foreignObject><rect x="24" y="842" width="1752" height="74" rx="12" fill="#f2f7fc" stroke="#7fa8cc"/>
-<text x="42" y="872" class="section">OSS観点の違い（重要）</text>
-<text x="299" y="871" class="small">不具合修正・機能追加の自由度は、長期利用では大きな差になる</text>
-<text x="64" y="900" class="val" style="fill:#169447">Cline ◎：コードを確認・修正・fork・PRしやすい</text>
-<text x="634" y="900" class="val" style="fill:#0877d1">Codex △：CLIはOSSだがDesktop本体はクローズド</text>
-<text x="1234" y="900" class="val" style="fill:#e85b0d">Cowork ×：本体はクローズド</text>
+<text x="840" y="48" text-anchor="middle" class="h1">Codex Desktop / Cline Desktop / Claude Cowork 比較 — 2026年10月</text>
+<text x="840" y="78" text-anchor="middle" class="sub">Windows / Local LLM / 音声入力 / 自動化 / ブラウザ操作 / OSS性</text>
 
-<rect x="24" y="930" width="1752" height="58" rx="12" fill="#fff" stroke="#bfcde0"/>
-<text x="42" y="955" class="section">目的別の選び方</text>
-<text x="274" y="958" class="val" style="fill:#169447">RTX PRO 6000等のLocal LLMを主役 → Cline Desktop</text>
-<text x="814" y="958" class="val" style="fill:#0877d1">OpenAIモデル + 音声 + Computer Use → Codex Desktop</text>
-<text x="1354" y="958" class="val" style="fill:#e85b0d">横断的Knowledge Work → Claude Cowork</text>
-<text x="1776" y="1000" text-anchor="end" class="small">Claude Cowork機能は2026年9月以降「Claude」への統合が進行中</text>
+<!-- Codex -->
+<rect x="28" y="104" width="528" height="690" rx="14" fill="white" stroke="#0877d1" stroke-width="2"/>
+<rect x="28" y="104" width="528" height="82" rx="14" fill="#0877d1"/>
+<rect x="28" y="172" width="528" height="14" fill="#0877d1"/>
+<text x="48" y="144" class="ph">Codex Desktop</text>
+<text x="50" y="168" class="ps">OpenAI統合の開発エージェント</text>
+
+<!-- Cline -->
+<rect x="576" y="104" width="528" height="690" rx="14" fill="white" stroke="#169447" stroke-width="2"/>
+<rect x="576" y="104" width="528" height="82" rx="14" fill="#169447"/>
+<rect x="576" y="172" width="528" height="14" fill="#169447"/>
+<text x="596" y="144" class="ph">Cline Desktop</text>
+<text x="598" y="168" class="ps">モデル非依存のオープンなAgent Harness</text>
+
+<!-- Cowork -->
+<rect x="1124" y="104" width="528" height="690" rx="14" fill="white" stroke="#e85b0d" stroke-width="2"/>
+<rect x="1124" y="104" width="528" height="82" rx="14" fill="#e85b0d"/>
+<rect x="1124" y="172" width="528" height="14" fill="#e85b0d"/>
+<text x="1144" y="144" class="ph">Claude Cowork</text>
+<text x="1146" y="168" class="ps">Knowledge Work向けDesktop Agent</text>
+
+<!-- helper rows -->
+<g>
+<rect x="29" y="186" width="526" height="50" fill="#eef6fc"/><line x1="28" y1="236" x2="556" y2="236" stroke="#d7e0ea"/><text x="44" y="216" class="lbl">Windows対応</text><text x="238" y="217" class="mark" fill="#0b9a50">◎</text><text x="273" y="215" class="val">正式対応</text>
+<rect x="29" y="236" width="526" height="50" fill="#ffffff"/><line x1="28" y1="286" x2="556" y2="286" stroke="#d7e0ea"/><text x="44" y="266" class="lbl">主な用途</text><text x="238" y="267" class="mark" fill="#0b9a50">◎</text><text x="273" y="265" class="val">OpenAI統合の開発エージェント</text>
+<rect x="29" y="286" width="526" height="50" fill="#eef6fc"/><line x1="28" y1="336" x2="556" y2="336" stroke="#d7e0ea"/><text x="44" y="316" class="lbl">対応モデル / Provider</text><text x="238" y="317" class="mark" fill="#d18a00">○</text><text x="273" y="315" class="val">OpenAI最適化 / custom provider</text>
+<rect x="29" y="336" width="526" height="50" fill="#ffffff"/><line x1="28" y1="386" x2="556" y2="386" stroke="#d7e0ea"/><text x="44" y="366" class="lbl">Local LLM</text><text x="238" y="367" class="mark" fill="#d18a00">△</text><text x="273" y="365" class="val">可能だが主戦場ではない</text>
+<rect x="29" y="386" width="526" height="50" fill="#eef6fc"/><line x1="28" y1="436" x2="556" y2="436" stroke="#d7e0ea"/><text x="44" y="416" class="lbl">音声入力 (STT)</text><text x="238" y="417" class="mark" fill="#0b9a50">◎</text><text x="273" y="415" class="val">Voice / Dictation</text>
+<rect x="29" y="436" width="526" height="50" fill="#ffffff"/><line x1="28" y1="486" x2="556" y2="486" stroke="#d7e0ea"/><text x="44" y="466" class="lbl">コード / ファイル / Terminal</text><text x="238" y="467" class="mark" fill="#0b9a50">◎</text><text x="273" y="465" class="val">非常に強い</text>
+<rect x="29" y="486" width="526" height="50" fill="#eef6fc"/><line x1="28" y1="536" x2="556" y2="536" stroke="#d7e0ea"/><text x="44" y="516" class="lbl">ブラウザ操作</text><text x="238" y="517" class="mark" fill="#0b9a50">◎</text><text x="273" y="515" class="val">Browser / Computer Use</text>
+<rect x="29" y="536" width="526" height="50" fill="#ffffff"/><line x1="28" y1="586" x2="556" y2="586" stroke="#d7e0ea"/><text x="44" y="566" class="lbl">自動化・定期実行</text><text x="238" y="567" class="mark" fill="#d18a00">○</text><text x="273" y="565" class="val">Automations</text>
+<rect x="29" y="586" width="526" height="50" fill="#eef6fc"/><line x1="28" y1="636" x2="556" y2="636" stroke="#d7e0ea"/><text x="44" y="616" class="lbl">拡張性</text><text x="238" y="617" class="mark" fill="#d18a00">○</text><text x="273" y="615" class="val">Skills / MCP</text>
+<rect x="29" y="636" width="526" height="50" fill="#ffffff"/><line x1="28" y1="686" x2="556" y2="686" stroke="#d7e0ea"/><text x="44" y="666" class="lbl">OSS / ユーザー修正</text><text x="238" y="667" class="mark" fill="#d18a00">△</text><text x="273" y="665" class="val">CLIはOSS / Desktop本体はクローズド</text>
+<rect x="577" y="186" width="526" height="50" fill="#effbf3"/><line x1="576" y1="236" x2="1104" y2="236" stroke="#d7e0ea"/><text x="592" y="216" class="lbl">Windows対応</text><text x="786" y="217" class="mark" fill="#0b9a50">◎</text><text x="821" y="215" class="val">対応</text>
+<rect x="577" y="236" width="526" height="50" fill="#ffffff"/><line x1="576" y1="286" x2="1104" y2="286" stroke="#d7e0ea"/><text x="592" y="266" class="lbl">主な用途</text><text x="786" y="267" class="mark" fill="#0b9a50">◎</text><text x="821" y="265" class="val">モデル非依存のAgent Harness</text>
+<rect x="577" y="286" width="526" height="50" fill="#effbf3"/><line x1="576" y1="336" x2="1104" y2="336" stroke="#d7e0ea"/><text x="592" y="316" class="lbl">対応モデル / Provider</text><text x="786" y="317" class="mark" fill="#0b9a50">◎</text><text x="821" y="315" class="val">300+ models / 50+ providers級</text>
+<rect x="577" y="336" width="526" height="50" fill="#ffffff"/><line x1="576" y1="386" x2="1104" y2="386" stroke="#d7e0ea"/><text x="592" y="366" class="lbl">Local LLM</text><text x="786" y="367" class="mark" fill="#0b9a50">◎</text><text x="821" y="358" class="val"><tspan x="821" dy="0">OpenAI互換 / Ollama / LM Studi</tspan><tspan x="821" dy="16">o</tspan></text>
+<rect x="577" y="386" width="526" height="50" fill="#effbf3"/><line x1="576" y1="436" x2="1104" y2="436" stroke="#d7e0ea"/><text x="592" y="416" class="lbl">音声入力 (STT)</text><text x="786" y="417" class="mark" fill="#d18a00">○</text><text x="821" y="415" class="val">Voice Input</text>
+<rect x="577" y="436" width="526" height="50" fill="#ffffff"/><line x1="576" y1="486" x2="1104" y2="486" stroke="#d7e0ea"/><text x="592" y="466" class="lbl">コード / ファイル / Terminal</text><text x="786" y="467" class="mark" fill="#0b9a50">◎</text><text x="821" y="465" class="val">強い</text>
+<rect x="577" y="486" width="526" height="50" fill="#effbf3"/><line x1="576" y1="536" x2="1104" y2="536" stroke="#d7e0ea"/><text x="592" y="516" class="lbl">ブラウザ操作</text><text x="786" y="517" class="mark" fill="#d18a00">○</text><text x="821" y="515" class="val">Workspace / Browser作業</text>
+<rect x="577" y="536" width="526" height="50" fill="#ffffff"/><line x1="576" y1="586" x2="1104" y2="586" stroke="#d7e0ea"/><text x="592" y="566" class="lbl">自動化・定期実行</text><text x="786" y="567" class="mark" fill="#0b9a50">◎</text><text x="821" y="565" class="val">Scheduled tasks / cron</text>
+<rect x="577" y="586" width="526" height="50" fill="#effbf3"/><line x1="576" y1="636" x2="1104" y2="636" stroke="#d7e0ea"/><text x="592" y="616" class="lbl">拡張性</text><text x="786" y="617" class="mark" fill="#0b9a50">◎</text><text x="821" y="615" class="val">MCP Marketplace / Skills</text>
+<rect x="577" y="636" width="526" height="50" fill="#ffffff"/><line x1="576" y1="686" x2="1104" y2="686" stroke="#d7e0ea"/><text x="592" y="666" class="lbl">OSS / ユーザー修正</text><text x="786" y="667" class="mark" fill="#0b9a50">◎</text><text x="821" y="665" class="val">ソース公開 / 修正・fork・PRが容易</text>
+<rect x="1125" y="186" width="526" height="50" fill="#fff5ee"/><line x1="1124" y1="236" x2="1652" y2="236" stroke="#d7e0ea"/><text x="1140" y="216" class="lbl">Windows対応</text><text x="1334" y="217" class="mark" fill="#0b9a50">◎</text><text x="1369" y="215" class="val">対応</text>
+<rect x="1125" y="236" width="526" height="50" fill="#ffffff"/><line x1="1124" y1="286" x2="1652" y2="286" stroke="#d7e0ea"/><text x="1140" y="266" class="lbl">主な用途</text><text x="1334" y="267" class="mark" fill="#0b9a50">◎</text><text x="1369" y="265" class="val">Knowledge Work向けAgent</text>
+<rect x="1125" y="286" width="526" height="50" fill="#fff5ee"/><line x1="1124" y1="336" x2="1652" y2="336" stroke="#d7e0ea"/><text x="1140" y="316" class="lbl">対応モデル / Provider</text><text x="1334" y="317" class="mark" fill="#d18a00">○</text><text x="1369" y="315" class="val">Claude中心</text>
+<rect x="1125" y="336" width="526" height="50" fill="#ffffff"/><line x1="1124" y1="386" x2="1652" y2="386" stroke="#d7e0ea"/><text x="1140" y="366" class="lbl">Local LLM</text><text x="1334" y="367" class="mark" fill="#d61f2c">×</text><text x="1369" y="365" class="val">ローカルLLM主用途ではない</text>
+<rect x="1125" y="386" width="526" height="50" fill="#fff5ee"/><line x1="1124" y1="436" x2="1652" y2="436" stroke="#d7e0ea"/><text x="1140" y="416" class="lbl">音声入力 (STT)</text><text x="1334" y="417" class="mark" fill="#d18a00">△</text><text x="1369" y="415" class="val">主な訴求点ではない</text>
+<rect x="1125" y="436" width="526" height="50" fill="#ffffff"/><line x1="1124" y1="486" x2="1652" y2="486" stroke="#d7e0ea"/><text x="1140" y="466" class="lbl">コード / ファイル / Terminal</text><text x="1334" y="467" class="mark" fill="#d18a00">○</text><text x="1369" y="465" class="val">ローカルファイルに強い</text>
+<rect x="1125" y="486" width="526" height="50" fill="#fff5ee"/><line x1="1124" y1="536" x2="1652" y2="536" stroke="#d7e0ea"/><text x="1140" y="516" class="lbl">ブラウザ操作</text><text x="1334" y="517" class="mark" fill="#0b9a50">◎</text><text x="1369" y="515" class="val">組み込みブラウザ</text>
+<rect x="1125" y="536" width="526" height="50" fill="#ffffff"/><line x1="1124" y1="586" x2="1652" y2="586" stroke="#d7e0ea"/><text x="1140" y="566" class="lbl">自動化・定期実行</text><text x="1334" y="567" class="mark" fill="#0b9a50">◎</text><text x="1369" y="565" class="val">長時間タスク / スケジュール</text>
+<rect x="1125" y="586" width="526" height="50" fill="#fff5ee"/><line x1="1124" y1="636" x2="1652" y2="636" stroke="#d7e0ea"/><text x="1140" y="616" class="lbl">拡張性</text><text x="1334" y="617" class="mark" fill="#d18a00">○</text><text x="1369" y="615" class="val">Connected apps / plugins</text>
+<rect x="1125" y="636" width="526" height="50" fill="#ffffff"/><line x1="1124" y1="686" x2="1652" y2="686" stroke="#d7e0ea"/><text x="1140" y="666" class="lbl">OSS / ユーザー修正</text><text x="1334" y="667" class="mark" fill="#d61f2c">×</text><text x="1369" y="665" class="val">本体クローズド / 任意修正不可</text>
+</g>
+
+<!-- strengths -->
+<rect x="40" y="698" width="504" height="46" rx="9" fill="#0877d1"/>
+<text x="52" y="727" class="cardt">強み: OpenAI + Voice + Computer Use + multi-agent</text>
+<rect x="40" y="754" width="504" height="28" rx="9" fill="#eef6fc" stroke="#0877d1"/>
+<text x="52" y="774" class="notet">注意: Desktop本体はユーザーが直接修正できない</text>
+
+<rect x="588" y="698" width="504" height="46" rx="9" fill="#169447"/>
+<text x="600" y="727" class="cardt">強み: Local LLM・モデル自由度・OSS・自己修正</text>
+<rect x="588" y="754" width="504" height="28" rx="9" fill="#effbf3" stroke="#169447"/>
+<text x="600" y="774" class="notet">注意: 品質はモデルとHarness設定に左右される</text>
+
+<rect x="1136" y="698" width="504" height="46" rx="9" fill="#e85b0d"/>
+<text x="1148" y="727" class="cardt">強み: ファイル / Web / アプリ横断の知識作業</text>
+<rect x="1136" y="754" width="504" height="28" rx="9" fill="#fff5ee" stroke="#e85b0d"/>
+<text x="1148" y="774" class="notet">注意: Local LLMや深いコードワークは主眼ではない</text>
+
+<!-- OSS -->
+<rect x="28" y="812" width="1624" height="66" rx="12" fill="#edf4fb" stroke="#8ca9c4"/>
+<text x="46" y="840" class="sec">OSS観点の違い（重要）</text>
+<text x="316" y="841" class="small">不具合修正・機能追加の自由度は、長期利用では大きな差になる</text>
+<text x="46" y="865" class="small" fill="#169447">Cline ◎：コードを確認・修正・fork・PRしやすい</text>
+<text x="570" y="865" class="small" fill="#0877d1">Codex △：CLIはOSSだがDesktop本体はクローズド</text>
+<text x="1160" y="865" class="small" fill="#e85b0d">Cowork ×：本体はクローズド</text>
+
+<!-- Choice -->
+<rect x="28" y="892" width="1624" height="52" rx="12" fill="white" stroke="#c8d3e0"/>
+<text x="46" y="924" class="sec">目的別:</text>
+<text x="150" y="924" class="small" fill="#169447">Local LLM主役 → Cline Desktop</text>
+<text x="585" y="924" class="small" fill="#0877d1">OpenAI + Voice + Computer Use → Codex Desktop</text>
+<text x="1140" y="924" class="small" fill="#e85b0d">横断Knowledge Work → Claude Cowork</text>
 </svg>
