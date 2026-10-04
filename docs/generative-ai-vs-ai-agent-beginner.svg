@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
+<rect width="1600" height="980" fill="#f7fafc"/>
+<style>
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;fill:#15243b}
+.h1{font-size:40px;font-weight:800}
+.sub{font-size:21px;font-weight:600;fill:#506176}
+.head{font-size:34px;font-weight:800;fill:#fff}
+.headsub{font-size:18px;font-weight:600;fill:#fff}
+.lbl{font-size:18px;font-weight:800}
+.body{font-size:17px;font-weight:600}
+.small{font-size:15px;font-weight:600;fill:#53657a}
+.step{font-size:17px;font-weight:700}
+.badge{font-size:16px;font-weight:800;fill:#fff}
+.callout{font-size:20px;font-weight:800}
+</style>
+
+<text x="800" y="54" text-anchor="middle" class="h1">プロンプトで使う生成AI と AIエージェントの違い</text>
+<text x="800" y="88" text-anchor="middle" class="sub">「答えを作るAI」から、「考えて・道具を使って・仕事を進めるAI」へ</text>
+
+<!-- left panel -->
+<rect x="38" y="124" width="740" height="700" rx="18" fill="#fff" stroke="#2b78c9" stroke-width="3"/>
+<rect x="38" y="124" width="740" height="88" rx="18" fill="#2b78c9"/>
+<rect x="38" y="194" width="740" height="18" fill="#2b78c9"/>
+<text x="408" y="166" text-anchor="middle" class="head">プロンプトで使う生成AI</text>
+<text x="408" y="193" text-anchor="middle" class="headsub">質問や指示に対して、1回ずつ回答を生成する</text>
+
+<!-- left flow -->
+<rect x="78" y="244" width="210" height="108" rx="14" fill="#eef6ff" stroke="#80afe0" stroke-width="2"/>
+<text x="183" y="271" text-anchor="middle" class="lbl">ユーザー</text>
+<text x="96" y="301" class="body">「この資料を要約して」</text>
+<text x="96" y="329" class="small">毎回、次に何をするか指示</text>
+
+<path d="M300 298 H380" stroke="#2b78c9" stroke-width="10" stroke-linecap="round"/>
+<polygon points="380,282 410,298 380,314" fill="#2b78c9"/>
+
+<rect x="422" y="244" width="150" height="108" rx="20" fill="#2b78c9"/>
+<text x="497" y="291" text-anchor="middle" class="badge">生成AI</text>
+<text x="497" y="319" text-anchor="middle" class="badge">LLM</text>
+
+<path d="M584 298 H640" stroke="#2b78c9" stroke-width="10" stroke-linecap="round"/>
+<polygon points="640,282 670,298 640,314" fill="#2b78c9"/>
+
+<rect x="672" y="244" width="82" height="108" rx="14" fill="#eef6ff" stroke="#80afe0" stroke-width="2"/>
+<text x="713" y="282" text-anchor="middle" class="lbl">回答</text>
+<text x="713" y="312" text-anchor="middle" class="small">要約文</text>
+
+<!-- left rows -->
+<g>
+<rect x="64" y="382" width="688" height="50" fill="#eef6ff"/><text x="82" y="414" class="lbl">主導権</text><text x="245" y="414" class="body">ユーザー（何をするか毎回指示）</text>
+<rect x="64" y="432" width="688" height="50" fill="#fff"/><text x="82" y="464" class="lbl">得意</text><text x="245" y="464" class="body">質問回答、要約、翻訳、文章作成、アイデア出し</text>
+<rect x="64" y="482" width="688" height="50" fill="#eef6ff"/><text x="82" y="514" class="lbl">作業の流れ</text><text x="245" y="514" class="body">1問1答が基本。次の作業はユーザーが指示</text>
+<rect x="64" y="532" width="688" height="50" fill="#fff"/><text x="82" y="564" class="lbl">ツール</text><text x="245" y="564" class="body">基本はチャット内。外部操作は限定的</text>
+<rect x="64" y="582" width="688" height="50" fill="#eef6ff"/><text x="82" y="614" class="lbl">例</text><text x="245" y="614" class="body">ChatGPT / Claude / Gemini のチャット利用</text>
+</g>
+
+<rect x="70" y="660" width="676" height="130" rx="14" fill="#fff3f4" stroke="#ec7990" stroke-width="2"/>
+<text x="92" y="692" class="callout" fill="#bd3552">たとえるなら：優秀な料理人</text>
+<text x="92" y="724" class="body">レシピ（指示）を渡せば、料理は上手に作ってくれる。</text>
+<text x="92" y="753" class="body">でも「次に何を作るか」「材料を買うか」は、基本的に人が決める。</text>
+
+<!-- right panel -->
+<rect x="822" y="124" width="740" height="700" rx="18" fill="#fff" stroke="#199a58" stroke-width="3"/>
+<rect x="822" y="124" width="740" height="88" rx="18" fill="#199a58"/>
+<rect x="822" y="194" width="740" height="18" fill="#199a58"/>
+<text x="1192" y="166" text-anchor="middle" class="head">AIエージェント</text>
+<text x="1192" y="193" text-anchor="middle" class="headsub">目標を理解し、計画して、ツールを使いながら仕事を進める</text>
+
+<!-- right goal -->
+<rect x="852" y="236" width="300" height="116" rx="14" fill="#effbf4" stroke="#7bc99c" stroke-width="2"/>
+<text x="1002" y="266" text-anchor="middle" class="lbl">ユーザーは「目標」を伝える</text>
+<text x="872" y="298" class="body">「先週の会議資料をまとめて、</text>
+<text x="872" y="325" class="body">レポートを作り、チームに共有して」</text>
+
+<path d="M1164 294 H1222" stroke="#199a58" stroke-width="10" stroke-linecap="round"/>
+<polygon points="1222,278 1252,294 1222,310" fill="#199a58"/>
+
+<rect x="1266" y="232" width="266" height="126" rx="18" fill="#e9f8ef" stroke="#199a58" stroke-width="2"/>
+<text x="1399" y="264" text-anchor="middle" class="lbl">AIエージェント</text>
+<text x="1286" y="294" class="step">① 理解・計画する</text>
+<text x="1286" y="320" class="step">② 必要な情報を調べる</text>
+<text x="1286" y="346" class="step">③ ツールで実行する</text>
+
+<!-- tool chips -->
+<rect x="852" y="382" width="125" height="42" rx="21" fill="#199a58"/><text x="914" y="409" text-anchor="middle" class="badge">Web検索</text>
+<rect x="990" y="382" width="130" height="42" rx="21" fill="#199a58"/><text x="1055" y="409" text-anchor="middle" class="badge">ファイル</text>
+<rect x="1133" y="382" width="140" height="42" rx="21" fill="#199a58"/><text x="1203" y="409" text-anchor="middle" class="badge">アプリ操作</text>
+<rect x="1286" y="382" width="120" height="42" rx="21" fill="#199a58"/><text x="1346" y="409" text-anchor="middle" class="badge">Terminal</text>
+<rect x="1419" y="382" width="113" height="42" rx="21" fill="#199a58"/><text x="1475" y="409" text-anchor="middle" class="badge">MCP</text>
+
+<!-- right rows -->
+<g>
+<rect x="848" y="452" width="688" height="50" fill="#effbf4"/><text x="866" y="484" class="lbl">主導権</text><text x="1029" y="484" class="body">AIエージェント（必要に応じて人に確認）</text>
+<rect x="848" y="502" width="688" height="50" fill="#fff"/><text x="866" y="534" class="lbl">得意</text><text x="1029" y="534" class="body">調査、分析、ファイル編集、Web操作、レポート作成</text>
+<rect x="848" y="552" width="688" height="50" fill="#effbf4"/><text x="866" y="584" class="lbl">作業の流れ</text><text x="1029" y="584" class="body">計画 → 実行 → 確認 → 修正 → 完了まで進める</text>
+<rect x="848" y="602" width="688" height="50" fill="#fff"/><text x="866" y="634" class="lbl">ツール</text><text x="1029" y="634" class="body">ブラウザ、ファイル、コマンド、外部アプリを利用</text>
+</g>
+
+<rect x="854" y="674" width="676" height="116" rx="14" fill="#effbf4" stroke="#72c998" stroke-width="2"/>
+<text x="876" y="706" class="callout" fill="#147a46">たとえるなら：シェフ兼マネージャー</text>
+<text x="876" y="738" class="body">「このメニューを完成させて」と目標を伝えると、</text>
+<text x="876" y="766" class="body">材料集め・調理・確認まで、必要な作業を自分で進める。</text>
+
+<!-- bottom beginner guide -->
+<rect x="38" y="846" width="1524" height="94" rx="16" fill="#fff9e7" stroke="#e5bd3a" stroke-width="2"/>
+<text x="70" y="880" class="callout">初心者向け：どちらを使う？</text>
+<text x="70" y="913" class="body">● 1つの質問・文章作成・要約だけ → プロンプト型生成AI</text>
+<text x="800" y="913" class="body">● 複数ステップの仕事を任せたい → AIエージェント</text>
+
+<text x="800" y="966" text-anchor="middle" class="sub">同じLLMでも「使い方」と「ツールを使える仕組み」で、できることが大きく変わる</text>
+</svg>
