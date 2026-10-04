@@ -2,6 +2,23 @@
 
 > Updated: 2026-10-01
 
+
+## Visual guides
+
+### Generative AI vs AI Agent — beginner overview
+
+従来のプロンプト型生成AIとAIエージェントの違いを、初心者向けに1枚で整理した図です。
+
+![Generative AI vs AI Agent](docs/generative-ai-vs-ai-agent-beginner.svg)
+
+### Desktop AI Agent comparison — 2026-10
+
+Codex Desktop / Cline Desktop / Claude Cowork を、Windows、Local LLM、音声入力、自動化、ブラウザ操作、拡張性、OSS / ユーザーによる不具合修正可能性の観点で比較しています。
+
+![Codex Desktop vs Cline Desktop vs Claude Cowork](docs/codex-cline-claude-cowork-comparison-2026-10.svg)
+
+---
+
 ## Goal
 
 Run a local LLM on an NVIDIA GH200 Linux server and expose it as an OpenAI-compatible API with vLLM.
