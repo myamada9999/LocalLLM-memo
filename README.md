@@ -2,6 +2,7 @@
 
 ## セットアップ・動作確認
 
+- [RTX PRO 6000のWindowsからUbuntuへの移行手順とトラブル対策](docs/RTX_PRO_6000_Windows_to_Ubuntu_20261009.md)
 - [GPUワークステーションの初期動作確認・RDP・USB接続（個人情報マスク済み）](docs/GPU_Workstation_Setup_Notes_Masked_20261007.md)
 - [GH200のLocal LLM構築とCline DesktopのRemote SSH設定](docs/gh200-cline-remote-ssh-setup.md)
 
