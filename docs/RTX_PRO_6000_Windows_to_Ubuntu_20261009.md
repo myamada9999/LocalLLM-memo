@@ -1,6 +1,8 @@
 # RTX PRO 6000 PCのWindowsからUbuntuへの移行手順と対策
 
-Windows上のStrataセットアップ中にNortonがスクリプトを隔離したことをきっかけに、RTX PRO 6000搭載PCをUbuntuへ移行した。Ubuntuの起動、Wi-Fi接続、NVIDIA open版ドライバによるGPU認識・画面表示改善、SSH・RDP接続までは成功している。StrataのセットアップはCUDA Toolkit導入の段階で停止しており、LLM起動完了とは区別する。
+> **2026年10月10日追記：** その後、CUDA Toolkitの手動導入とStrataのセットアップを完了し、日本語での対話・GPU推論・300W制限・再起動後のtmux起動に成功した。最新の手順は[Strata＋Flash-NextのUbuntuセットアップ](strata-flash-next-ubuntu-setup.md)を参照。以下は主に10月8日時点の移行経緯を残した記録。
+
+Windows上のStrataセットアップ中にNortonがスクリプトを隔離したことをきっかけに、RTX PRO 6000搭載PCをUbuntuへ移行した。Ubuntuの起動、Wi-Fi接続、NVIDIA open版ドライバによるGPU認識・画面表示改善、SSH・RDP接続までは成功している。10月8日時点ではStrataのセットアップがCUDA Toolkit導入の段階で停止していた。
 
 整理日：2026年10月9日。主な作業は10月8日。IPアドレス、ユーザー名、ホスト名、SSIDなどは省略し、コマンド中はプレースホルダーに置き換えた。
 
@@ -151,7 +153,7 @@ nvidia-smi -i 0 -q -d POWER
 
 `-pl` はGPUの電力上限をW単位で設定する。PC全体のコンセント消費電力を300Wに制限する機能ではない。再起動後も同じ値か確認し、常時適用する場合は起動時の再設定を別途整備する。
 
-## Strata再開時に残った課題
+## Strata再開時に残った課題（10月8日時点）
 
 最後のセットアップ画面では、GPU、CPU、RAM、PCIe 5.0 x16の確認は通過していた。選択表示は次のとおり。
 
@@ -183,7 +185,7 @@ Windowsで2個目のUSB Wi-Fiが見えなかった際は、「WIFI 6 USB」ド�
 
 Debian側PCで実施したWi-FiドライバのSecure Boot対策、公開鍵登録、DKMS署名設定も別件である。今回のUbuntu側NVIDIAの主要対策はopen版への切り替えだった。Ubuntuでも同じ署名作業を実施したと扱わない。
 
-## 確認済みの到達点
+## 確認済みの到達点（10月8日時点）
 
 - [x] WindowsからUbuntuへ再インストールした
 - [x] UbuntuでWi-Fiに接続できた
