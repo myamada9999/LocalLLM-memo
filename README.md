@@ -8,6 +8,7 @@
 
 ## Linuxノウハウ
 
+- [UbuntuのRDP接続と日本語入力（Remmina / IBus Mozc）](docs/linux/ubuntu-rdp-japanese-input.md)
 - [SSHとtmux：切断後に同じ端末へ戻る](docs/linux/ssh-tmux-session.md)
 - [DebianでTP-Link Archer T3U Nanoを使う：Secure Boot・MOK登録・DKMS署名](docs/linux/debian-tplink-archer-t3u-nano.md)
 
