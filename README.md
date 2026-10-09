@@ -9,6 +9,7 @@
 
 ## Linuxノウハウ
 
+- [UbuntuでAIC8800D80 USB Wi-Fi 6を使う：DKMS導入・Secure Boot・接続確認](docs/linux/ubuntu-aic8800d80-wifi6.md)
 - [UbuntuのRDP接続と日本語入力（Remmina / IBus Mozc）](docs/linux/ubuntu-rdp-japanese-input.md)
 - [SSHとtmux：切断後に同じ端末へ戻る](docs/linux/ssh-tmux-session.md)
 - [DebianでTP-Link Archer T3U Nanoを使う：Secure Boot・MOK登録・DKMS署名](docs/linux/debian-tplink-archer-t3u-nano.md)
