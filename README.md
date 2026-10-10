@@ -2,6 +2,7 @@
 
 ## セットアップ・動作確認
 
+- [RTX PRO 6000：Project Maya＋GLM-5.3-FlashをVision付きでセットアップ](docs/project-maya-ubuntu-vision-setup.md)
 - [RTX PRO 6000：UbuntuでStrata＋Flash-Nextをセットアップ・再起動後に起動](docs/strata-flash-next-ubuntu-setup.md)
 - [RTX PRO 6000のWindowsからUbuntuへの移行手順とトラブル対策](docs/RTX_PRO_6000_Windows_to_Ubuntu_20261009.md)
 - [GPUワークステーションの初期動作確認・RDP・USB接続（個人情報マスク済み）](docs/GPU_Workstation_Setup_Notes_Masked_20261007.md)
