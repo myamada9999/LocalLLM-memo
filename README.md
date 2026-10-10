@@ -2,6 +2,8 @@
 
 ## セットアップ・動作確認
 
+- [RTX PRO 6000：GLM-5.3-Flash Uncensored GGUFをllama.cppからMayaへ移行・速度を検証](docs/glm53-flash-uncensored-gguf-llama-maya-20261010.md)
+
 - [RTX PRO 6000：Project Maya＋GLM-5.3-FlashをVision付きでセットアップ](docs/project-maya-ubuntu-vision-setup.md)
 - [RTX PRO 6000：UbuntuでStrata＋Flash-Nextをセットアップ・再起動後に起動](docs/strata-flash-next-ubuntu-setup.md)
 - [RTX PRO 6000のWindowsからUbuntuへの移行手順とトラブル対策](docs/RTX_PRO_6000_Windows_to_Ubuntu_20261009.md)

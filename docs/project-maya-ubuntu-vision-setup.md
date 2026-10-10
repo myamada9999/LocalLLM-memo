@@ -2,6 +2,8 @@
 
 Project MayaをUbuntuへ導入し、最初からVisionを有効にしてチャットと画像入力を使う手順。今回の作業では、起動成功と画像を添付して説明が返るところまで確認できた。
 
+続編：[同じUncensored Q3_K_M GGUFをllama.cppからMayaへ移行した検証記録](glm53-flash-uncensored-gguf-llama-maya-20261010.md)。モデルと設定が異なる検証のため、通常版Visionの速度測定としては扱わない。
+
 ## 1. Project Mayaの概要
 
 [Project Maya](https://github.com/mw00/project-maya)はStrataを基にした、GLM-5.3-Flash用の推論エンジン・サーバー・ブラウザUI。MoE expertをVRAM・RAM・NVMe SSDへ配置して、大きなモデルをローカルで動かす。
