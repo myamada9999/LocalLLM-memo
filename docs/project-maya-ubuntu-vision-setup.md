@@ -4,6 +4,8 @@ Project MayaをUbuntuへ導入し、最初からVisionを有効にしてチャ�
 
 続編：[同じUncensored Q3_K_M GGUFをllama.cppからMayaへ移行した検証記録](glm53-flash-uncensored-gguf-llama-maya-20261010.md)。モデルと設定が異なる検証のため、通常版Visionの速度測定としては扱わない。
 
+比較：[Mayaの通常版・Uncensored Q3_K_M・Q4_K_Mの動作と測定値](maya-glm53-model-comparison-20261011.md)。通常版の速度は未測定として区別し、Q3・Q4の同じ質問での表示値をまとめた。
+
 ## 1. Project Mayaの概要
 
 [Project Maya](https://github.com/mw00/project-maya)はStrataを基にした、GLM-5.3-Flash用の推論エンジン・サーバー・ブラウザUI。MoE expertをVRAM・RAM・NVMe SSDへ配置して、大きなモデルをローカルで動かす。

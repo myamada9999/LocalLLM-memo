@@ -2,6 +2,8 @@
 
 ## セットアップ・動作確認
 
+- [RTX PRO 6000：Mayaの通常版・Uncensored Q3_K_M・Q4_K_Mを比較](docs/maya-glm53-model-comparison-20261011.md)
+
 - [RTX PRO 6000：GLM-5.3-Flash Uncensored GGUFをllama.cppからMayaへ移行・速度を検証](docs/glm53-flash-uncensored-gguf-llama-maya-20261010.md)
 
 - [RTX PRO 6000：Project Maya＋GLM-5.3-FlashをVision付きでセットアップ](docs/project-maya-ubuntu-vision-setup.md)

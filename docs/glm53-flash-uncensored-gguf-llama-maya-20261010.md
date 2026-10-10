@@ -10,6 +10,8 @@ OrcaRouterのGLM-5.3-Flash-Uncensored-GGUF Q3_K_Mを、まずllama-serverでCPU�
 
 通常版Maya＋Visionの導入は[既存のセットアップ記録](project-maya-ubuntu-vision-setup.md)を参照。
 
+続編（2026-10-11）：[Mayaの通常版・Uncensored Q3_K_M・Q4_K_Mの比較](maya-glm53-model-comparison-20261011.md)。Q4の取得・起動と2つの質問の測定値、自動チューニングの実施状況を追加整理した。本記録の数値は2026-10-10のQ3検証のもの。
+
 ## 1. 検証環境と対象モデル
 
 | 項目 | 内容 |
