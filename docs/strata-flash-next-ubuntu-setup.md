@@ -2,6 +2,8 @@
 
 Ubuntu 26.04 LTS上でStrata＋Qwen3.8-Flash-Next（Unsloth UD-IQ4_XS）を起動し、日本語で対話できること、GPU推論、300Wの電力制限を確認した。さらに起動スクリプトと設定を保存し、再起動後に300Wを再設定してtmux内で起動する手順も成功した。
 
+2026年10月12日追記：[Vision＋experimental speed projectionの追加手順](strata-flash-next-vision-projection-ubuntu.md)で、UD-IQ4_XSのGPU画像応答とMonitorの `Done` ＋ `ESP` まで確認した。以下の初期導入記録は10月10日時点のテキスト構成。
+
 整理日：2026年10月10日（日本時間）。作業記録と画面で確認できた内容を中心にまとめる。IPアドレス・ユーザー名・ホスト名などは省略し、パスは `~/AI` を使って表す。
 
 ## 1. 動作確認した構成
@@ -284,6 +286,7 @@ tmuxは端末の切断・デタッチに備える仕組みで、PCの再起動�
 - [x] 回答生成時のGPU使用率100%と300W上限を確認
 - [x] 起動スクリプト・設定ファイル・コミット番号を確認し、保存手順を実施
 - [x] 再起動後、300W再設定＋tmuxでの起動に成功
+- [x] 10月12日：GPU Vision＋projection ONで画像応答を確認（[追加手順とエラー対処](strata-flash-next-vision-projection-ubuntu.md)）
 
 ## 関連メモ・参照資料
 
