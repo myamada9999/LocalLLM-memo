@@ -2,6 +2,8 @@
 
 Ubuntuで動作済みのQwen3.8-Flash-Next（Unsloth UD-IQ4_XS）にprojectionを適用し、その後GPU Visionを追加した。2026年10月12日（日本時間）、起動、画像への応答、Monitorの `Done` ＋ `ESP` 表示まで確認完了の報告があった。
 
+2026年10月12日追記：[ComfyUIのMCP接続と画像生成](strata-comfyui-mcp-image-generation-ubuntu-20261012.md)では、このVision＋projection構成を使い、コンテキストを64Kへ変更してQwenから画像生成を開始・確認した。以下はMCP追加前の32K構成の記録。
+
 ## 1. 前提と到達点
 
 | 項目 | 今回の構成・確認 |

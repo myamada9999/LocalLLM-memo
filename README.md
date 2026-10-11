@@ -9,6 +9,7 @@
 - [RTX PRO 6000：Project Maya＋GLM-5.3-FlashをVision付きでセットアップ](docs/project-maya-ubuntu-vision-setup.md)
 - [RTX PRO 6000：UbuntuでStrata＋Flash-Nextをセットアップ・再起動後に起動](docs/strata-flash-next-ubuntu-setup.md)
 - [Strata＋Flash-Next UD-IQ4_XS：Visionとprojection ONを併用・画像応答を確認](docs/strata-flash-next-vision-projection-ubuntu.md)
+- [Strata＋QwenからComfyUIをMCPで操作：画像生成確認・64K設定・エラー対処](docs/strata-comfyui-mcp-image-generation-ubuntu-20261012.md)
 - [RTX PRO 6000のWindowsからUbuntuへの移行手順とトラブル対策](docs/RTX_PRO_6000_Windows_to_Ubuntu_20261009.md)
 - [GPUワークステーションの初期動作確認・RDP・USB接続（個人情報マスク済み）](docs/GPU_Workstation_Setup_Notes_Masked_20261007.md)
 - [GH200のLocal LLM構築とCline DesktopのRemote SSH設定](docs/gh200-cline-remote-ssh-setup.md)
