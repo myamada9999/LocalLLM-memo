@@ -14,6 +14,7 @@
 
 ## Linuxノウハウ
 
+- [Ubuntu起動時にNVIDIA GPUの電力上限を300Wへ設定（systemd）](docs/linux/ubuntu-nvidia-power-limit-systemd.md)
 - [UbuntuでAIC8800D80 USB Wi-Fi 6を使う：DKMS導入・Secure Boot・接続確認](docs/linux/ubuntu-aic8800d80-wifi6.md)
 - [UbuntuのRDP接続と日本語入力（Remmina / IBus Mozc）](docs/linux/ubuntu-rdp-japanese-input.md)
 - [SSHとtmux：切断後に同じ端末へ戻る](docs/linux/ssh-tmux-session.md)
