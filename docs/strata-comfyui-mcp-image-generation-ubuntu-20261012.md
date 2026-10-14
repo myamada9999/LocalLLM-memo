@@ -296,6 +296,8 @@ git -C ~/AI/ComfyUI rev-parse HEAD
 
 ## 関連手順・公式資料
 
+- [続編：MiniMax H3の導入・Qwen＋MCPで動画生成・フレームレビュー・再比較](minimax-h3-comfyui-qwen-mcp-ubuntu-20261015.md)
+
 - [StrataのUbuntu初期セットアップ](strata-flash-next-ubuntu-setup.md)
 - [StrataのGPU Vision＋projection追加](strata-flash-next-vision-projection-ubuntu.md)
 - [SSHとtmux](linux/ssh-tmux-session.md)

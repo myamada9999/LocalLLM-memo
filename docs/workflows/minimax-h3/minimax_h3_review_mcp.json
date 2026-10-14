@@ -1,0 +1,1586 @@
+{
+  "last_node_id": 2008,
+  "last_link_id": 39,
+  "nodes": [
+    {
+      "id": 92,
+      "type": "SaveVideo",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "title": "ビデオを保存",
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 1
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": {
+        "filename_prefix": "video/MiniMax_H3",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 115,
+      "type": "ResolutionSelector",
+      "pos": [
+        410,
+        0
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "title": "解像度セレクター",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            17
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            18
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": {
+        "aspect_ratio": "16:9 (Widescreen)",
+        "megapixels": 0.4,
+        "multiple": 32
+      }
+    },
+    {
+      "id": 119,
+      "type": "VAELoader",
+      "pos": [
+        820,
+        0
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "title": "VAEを読み込む",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            5,
+            21
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": {
+        "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+      }
+    },
+    {
+      "id": 120,
+      "type": "VAELoader",
+      "pos": [
+        1230,
+        0
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "title": "VAEを読み込む",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": {
+        "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 121,
+      "type": "VAEDecodeAudio",
+      "pos": [
+        1640,
+        0
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "title": "VAEデコード音声",
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 2
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeAudio"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 122,
+      "type": "VAEDecode",
+      "pos": [
+        0,
+        450
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "title": "VAEデコード",
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15,
+            30,
+            33,
+            37
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 123,
+      "type": "KSamplerSelect",
+      "pos": [
+        410,
+        450
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "title": "Kサンプラー選択",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            10
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": {
+        "sampler_name": "res_multistep"
+      }
+    },
+    {
+      "id": 124,
+      "type": "BasicScheduler",
+      "pos": [
+        820,
+        450
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "title": "基本スケジューラー",
+      "inputs": [
+        {
+          "name": "steps",
+          "type": "INT",
+          "link": 6
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": {
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    {
+      "id": 125,
+      "type": "SamplerCustomAdvanced",
+      "pos": [
+        1230,
+        450
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "title": "カスタムサンプラー（高度）",
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 8
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 9
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 10
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 11
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2,
+            4
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 126,
+      "type": "BasicGuider",
+      "pos": [
+        1640,
+        450
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "title": "基本ガイダー",
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            9
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 127,
+      "type": "UNETLoader",
+      "pos": [
+        0,
+        900
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "title": "拡散モデルを読み込む",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            23,
+            25
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": {
+        "unet_name": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    {
+      "id": 128,
+      "type": "CLIPLoader",
+      "pos": [
+        410,
+        900
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "title": "CLIPを読み込む",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": {
+        "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 129,
+      "type": "RandomNoise",
+      "pos": [
+        820,
+        900
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "title": "ランダムノイズ",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            8
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": {
+        "noise_seed": 757358688076805
+      }
+    },
+    {
+      "id": 130,
+      "type": "CreateVideo",
+      "pos": [
+        1230,
+        900
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "title": "動画を作成",
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 15
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": {
+        "fps": 24,
+        "bit_depth": 8,
+        "color_space": "sRGB",
+        "codec": "none"
+      }
+    },
+    {
+      "id": 131,
+      "type": "MiniMaxH3ImageToVideo",
+      "pos": [
+        1640,
+        900
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "title": "MiniMax H3 画像から動画へ",
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 17
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 18
+        },
+        {
+          "name": "length",
+          "type": "INT",
+          "link": 19
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 20
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            12
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3ImageToVideo"
+      },
+      "widgets_values": {
+        "prompt": "Realistic live-action cinematic look, action movie trailer: practical film photography style, a post-rain dusk metropolis, anamorphic lens, shallow depth of field, film grain, city volumetric fog, flying-car traffic between the towers, restrained grading for a premium feel, powerful natural movement.\n\nScene overview: at dusk on a cluster of skyscrapers, the protagonist is being chased, sprinting and leaping across rooftops, jumping from one building's roof to the next with pursuers closing in behind. This is the escape sequence of an action movie trailer: every leap is life-or-death, thrilling and fluid.\n\nStoryboard (each shot a separate scene, rapid cuts, all landing on the musical beats):\n[0s-1.5s] Shot 1: high side angle: the protagonist sprinting at the roof edge, pursuers appearing in the rooftop doorway behind him, wind catching his coat.\n[1s-2.5s] Shot 2: the protagonist leaps across the gap between buildings, body stretching mid-air, towers and flying-car light trails behind him, a slight slow-motion feel.\n[2.5s-4s] Shot 3: he lands, rolls and rises, low-angle shot, tower shadows and fog behind him, he keeps running.\n[4s-5s] Shot 4: freeze: the instant he hits the edge of the next roof and launches into the jump, silhouette, holding.\n\nCamera: each shot its own angle, cuts clean and hard, no dissolves, a slight frame jitter on the jumps.\n\nAudio: wind, rapid footsteps, city ambience, low score underneath, an accent hit on each leap, the score bursting at 4s, closing the last 1s.\n\nNo text, subtitles, logos or watermarks of any kind, no animation or cartoon rendering, no overly-CG look, keep the live-action texture."
+      }
+    },
+    {
+      "id": 132,
+      "type": "ComfyMathExpression",
+      "pos": [
+        0,
+        1350
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "title": "数式",
+      "inputs": [
+        {
+          "name": "values.a",
+          "type": "FLOAT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            19,
+            32,
+            36
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyMathExpression"
+      },
+      "widgets_values": {
+        "expression": "max(5, round(a * 24)) + (5 - (max(5, round(a * 24)) % 17)) % 17"
+      }
+    },
+    {
+      "id": 133,
+      "type": "PrimitiveFloat",
+      "pos": [
+        410,
+        1350
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "title": "Float (duration)",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveFloat"
+      },
+      "widgets_values": {
+        "value": 5
+      }
+    },
+    {
+      "id": 134,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        820,
+        1350
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "title": "LoRAローダーモデルのみ",
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            26
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": {
+        "lora_name": "minimax_h3_fl2v_turbo_8step_v1.0_comfyui_bf16.safetensors",
+        "strength_model": 1
+      }
+    },
+    {
+      "id": 135,
+      "type": "ComfySwitchNode",
+      "pos": [
+        1230,
+        1350
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "title": "If/Else Switch (Model)",
+      "inputs": [
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "link": 24
+        },
+        {
+          "name": "on_false",
+          "type": "MODEL",
+          "link": 25
+        },
+        {
+          "name": "on_true",
+          "type": "MODEL",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            7,
+            13
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 136,
+      "type": "ComfySwitchNode",
+      "pos": [
+        1640,
+        1350
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "title": "If/Else Switch (Steps)",
+      "inputs": [
+        {
+          "name": "switch",
+          "type": "BOOLEAN",
+          "link": 27
+        },
+        {
+          "name": "on_false",
+          "type": "INT",
+          "link": 28
+        },
+        {
+          "name": "on_true",
+          "type": "INT",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfySwitchNode"
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 137,
+      "type": "PrimitiveInt",
+      "pos": [
+        0,
+        1800
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "title": "整数",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            28
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": {
+        "value": 20
+      }
+    },
+    {
+      "id": 138,
+      "type": "PrimitiveInt",
+      "pos": [
+        410,
+        1800
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "title": "整数",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            29
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": {
+        "value": 8
+      }
+    },
+    {
+      "id": 139,
+      "type": "PrimitiveBoolean",
+      "pos": [
+        820,
+        1800
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "title": "Boolean (Enable Lightning LoRA)",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "BOOLEAN",
+          "type": "BOOLEAN",
+          "links": [
+            24,
+            27
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveBoolean"
+      },
+      "widgets_values": {
+        "value": false
+      }
+    },
+    {
+      "id": 2001,
+      "type": "ImageFromBatch",
+      "pos": [
+        1230,
+        1800
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "title": "Review: first frame",
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch"
+      },
+      "widgets_values": {
+        "batch_index": 0,
+        "length": 1
+      }
+    },
+    {
+      "id": 2002,
+      "type": "SaveImage",
+      "pos": [
+        1640,
+        1800
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "title": "Save review 1",
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 31
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": {
+        "filename_prefix": "video/H3_review_01_first"
+      }
+    },
+    {
+      "id": 2003,
+      "type": "ComfyMathExpression",
+      "pos": [
+        0,
+        2250
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "title": "Middle frame index",
+      "inputs": [
+        {
+          "name": "values.a",
+          "type": "INT",
+          "link": 32
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            34
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyMathExpression"
+      },
+      "widgets_values": {
+        "expression": "max(0, floor((a - 1) / 2))"
+      }
+    },
+    {
+      "id": 2004,
+      "type": "ImageFromBatch",
+      "pos": [
+        410,
+        2250
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "title": "Review: middle frame",
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 33
+        },
+        {
+          "name": "batch_index",
+          "type": "INT",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            35
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch"
+      },
+      "widgets_values": {
+        "length": 1
+      }
+    },
+    {
+      "id": 2005,
+      "type": "SaveImage",
+      "pos": [
+        820,
+        2250
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "title": "Save review 2",
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 35
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": {
+        "filename_prefix": "video/H3_review_02_middle"
+      }
+    },
+    {
+      "id": 2006,
+      "type": "ComfyMathExpression",
+      "pos": [
+        1230,
+        2250
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "title": "Last frame index",
+      "inputs": [
+        {
+          "name": "values.a",
+          "type": "INT",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            38
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ComfyMathExpression"
+      },
+      "widgets_values": {
+        "expression": "max(0, a - 1)"
+      }
+    },
+    {
+      "id": 2007,
+      "type": "ImageFromBatch",
+      "pos": [
+        1640,
+        2250
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "title": "Review: last frame",
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 37
+        },
+        {
+          "name": "batch_index",
+          "type": "INT",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageFromBatch"
+      },
+      "widgets_values": {
+        "length": 1
+      }
+    },
+    {
+      "id": 2008,
+      "type": "SaveImage",
+      "pos": [
+        0,
+        2700
+      ],
+      "size": [
+        380,
+        390
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "title": "Save review 3",
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": {
+        "filename_prefix": "video/H3_review_03_last"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      130,
+      0,
+      92,
+      0,
+      "VIDEO"
+    ],
+    [
+      2,
+      125,
+      0,
+      121,
+      0,
+      "LATENT"
+    ],
+    [
+      3,
+      120,
+      0,
+      121,
+      1,
+      "VAE"
+    ],
+    [
+      4,
+      125,
+      0,
+      122,
+      0,
+      "LATENT"
+    ],
+    [
+      5,
+      119,
+      0,
+      122,
+      1,
+      "VAE"
+    ],
+    [
+      6,
+      136,
+      0,
+      124,
+      0,
+      "INT"
+    ],
+    [
+      7,
+      135,
+      0,
+      124,
+      1,
+      "MODEL"
+    ],
+    [
+      8,
+      129,
+      0,
+      125,
+      0,
+      "NOISE"
+    ],
+    [
+      9,
+      126,
+      0,
+      125,
+      1,
+      "GUIDER"
+    ],
+    [
+      10,
+      123,
+      0,
+      125,
+      2,
+      "SAMPLER"
+    ],
+    [
+      11,
+      124,
+      0,
+      125,
+      3,
+      "SIGMAS"
+    ],
+    [
+      12,
+      131,
+      1,
+      125,
+      4,
+      "LATENT"
+    ],
+    [
+      13,
+      135,
+      0,
+      126,
+      0,
+      "MODEL"
+    ],
+    [
+      14,
+      131,
+      0,
+      126,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      15,
+      122,
+      0,
+      130,
+      0,
+      "IMAGE"
+    ],
+    [
+      16,
+      121,
+      0,
+      130,
+      1,
+      "AUDIO"
+    ],
+    [
+      17,
+      115,
+      0,
+      131,
+      0,
+      "INT"
+    ],
+    [
+      18,
+      115,
+      1,
+      131,
+      1,
+      "INT"
+    ],
+    [
+      19,
+      132,
+      1,
+      131,
+      2,
+      "INT"
+    ],
+    [
+      20,
+      128,
+      0,
+      131,
+      3,
+      "CLIP"
+    ],
+    [
+      21,
+      119,
+      0,
+      131,
+      4,
+      "VAE"
+    ],
+    [
+      22,
+      133,
+      0,
+      132,
+      0,
+      "FLOAT"
+    ],
+    [
+      23,
+      127,
+      0,
+      134,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      139,
+      0,
+      135,
+      0,
+      "BOOLEAN"
+    ],
+    [
+      25,
+      127,
+      0,
+      135,
+      1,
+      "MODEL"
+    ],
+    [
+      26,
+      134,
+      0,
+      135,
+      2,
+      "MODEL"
+    ],
+    [
+      27,
+      139,
+      0,
+      136,
+      0,
+      "BOOLEAN"
+    ],
+    [
+      28,
+      137,
+      0,
+      136,
+      1,
+      "INT"
+    ],
+    [
+      29,
+      138,
+      0,
+      136,
+      2,
+      "INT"
+    ],
+    [
+      30,
+      122,
+      0,
+      2001,
+      0,
+      "IMAGE"
+    ],
+    [
+      31,
+      2001,
+      0,
+      2002,
+      0,
+      "IMAGE"
+    ],
+    [
+      32,
+      132,
+      1,
+      2003,
+      0,
+      "INT"
+    ],
+    [
+      33,
+      122,
+      0,
+      2004,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      2003,
+      1,
+      2004,
+      1,
+      "INT"
+    ],
+    [
+      35,
+      2004,
+      0,
+      2005,
+      0,
+      "IMAGE"
+    ],
+    [
+      36,
+      132,
+      1,
+      2006,
+      0,
+      "INT"
+    ],
+    [
+      37,
+      122,
+      0,
+      2007,
+      0,
+      "IMAGE"
+    ],
+    [
+      38,
+      2006,
+      1,
+      2007,
+      1,
+      "INT"
+    ],
+    [
+      39,
+      2007,
+      0,
+      2008,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}
