@@ -2,6 +2,8 @@
 
 ## セットアップ・動作確認
 
+- [GH200 96GB：agentionai版llama.cppのビルド・Gyro-M／Lの導入と2人共有（実機未検証）](docs/gh200-agentionai-gyro-setup-20261023.md)
+
 - [RTX PRO 6000：MiniMax H3をComfyUIで動かし、Strata＋QwenからMCPで動画生成・レビュー](docs/minimax-h3-comfyui-qwen-mcp-ubuntu-20261015.md)
 
 - [RTX PRO 6000：Mayaの通常版・Uncensored Q3_K_M・Q4_K_Mを比較](docs/maya-glm53-model-comparison-20261011.md)
