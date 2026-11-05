@@ -236,6 +236,12 @@
 - 概要: NVIDIA SCADAによるGPU-initiated storage I/Oのlatency、command数、実行状況をNsight Systems上で可視化する公式profiling機能。
 - 評価: A
 
+### FlatCake: A Flat KVCache Storage Architecture for LLM Serving
+- 公開日: 2026-10-28
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2610.38355)
+- 概要: Host DRAMとNVMe SSDを対等なKV Cache保存先として管理し、セッション単位の連続配置とGPUDirect Storageによる読み出し結合で、SSD read amplificationとDRAM stagingの競合を削減するLLM serving方式。
+- 評価: A
+
 ## B
 
 ### Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute
