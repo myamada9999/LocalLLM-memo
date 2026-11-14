@@ -66,6 +66,12 @@
 - 概要: SSD内部のNAND channel近傍でKV Cache処理やAttention計算を実行し、GPUとのデータ転送量を削減するcomputational storage方式。
 - 評価: S
 
+### SwarmIO: Towards 100 Million IOPS SSD Emulation for Next-generation GPU-centric Storage Systems
+- 公開日: 2026-04-08
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2604.06668)
+- 概要: GPU-issued NVMe I/Oと512B random readを対象とするSSD emulator。分散NVMe queue処理、Intel DSAによる転送、timing model更新の集約により実機GPU上で最大40 MIOPSを評価し、vector searchのend-to-end性能も検証。
+- 評価: S
+
 ## A
 
 ### GIDS: Accelerating Sampling and Aggregation Operations in GNN Frameworks with GPU Initiated Direct Storage Accesses
@@ -240,6 +246,12 @@
 - 公開日: 2026-10-28
 - リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2610.38355)
 - 概要: Host DRAMとNVMe SSDを対等なKV Cache保存先として管理し、セッション単位の連続配置とGPUDirect Storageによる読み出し結合で、SSD read amplificationとDRAM stagingの競合を削減するLLM serving方式。
+- 評価: A
+
+### When Is High-Bandwidth Flash Cost-Effective for LLM Inference?
+- 公開日: 2026-11-08
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.11036)
+- 概要: HBFと従来のGPU・host DRAM・SSD階層を比較し、LLM weight offloadingのGPU台数削減、throughput、導入費用の成立条件を9モデル・5 workloadのシミュレーションで評価。短い対話やpaused sessionで効果が大きい一方、SLOとHBF価格に依存。
 - 評価: A
 
 ## B
