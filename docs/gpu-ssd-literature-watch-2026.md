@@ -254,6 +254,12 @@
 - 概要: HBFと従来のGPU・host DRAM・SSD階層を比較し、LLM weight offloadingのGPU台数削減、throughput、導入費用の成立条件を9モデル・5 workloadのシミュレーションで評価。短い対話やpaused sessionで効果が大きい一方、SLOとHBF価格に依存。
 - 評価: A
 
+### LMCache & xPU-IO: LMCache Meets GPU Direct Storage
+- 公開日: 2026-11-09
+- リンク: [一次資料 / 公式資料](https://blog.lmcache.ai/en/2026/11/09/lmcache-xpu-io-lmcache-meets-gpu-direct-storage/)
+- 概要: LMCacheとxPU-IO Phoenixの公式技術解説。GPU memoryをLinux I/O stackの直接DMA対象にするPhoenixのZONE_DEVICE、GPU BAR mapping、io_uring batch I/O、stream-ordered I/Oを詳述。8×H20 GPUと4台NVMe SSDのKV Cache復元評価で、DRAM+SSD構成比2.9倍の同時要求数を5秒TTFT目標下で実現。CPU発行のI/O control pathは残るためGPU-issued NVMeとは異なる。
+- 評価: A
+
 ## B
 
 ### Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute
