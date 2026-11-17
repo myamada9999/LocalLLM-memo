@@ -31,3 +31,7 @@
 - [生成AIとAIエージェントの違い（初心者向け）](docs/generative-ai-vs-ai-agent-beginner.svg)
 - [Codex Desktop・Cline Desktop・Claude Coworkの比較](docs/desktop-ai-agent-comparison.md)（[比較図](docs/codex-cline-claude-cowork-comparison-2026-10.svg)）
 - [Dots：クラウド上で動くAIエージェントの構成](docs/dots-cloud-agent-overview-2026-10.svg)
+
+## ハーネス
+
+- [コンパクション：DSH・Codex・Cline Desktop・Pi・OpenCodeの「机の片付け」をやさしく比較](docs/harness/compaction.md)
