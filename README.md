@@ -35,3 +35,4 @@
 ## ハーネス
 
 - [コンパクション：DSH・Codex・Cline Desktop・Pi・OpenCodeの「机の片付け」をやさしく比較](docs/harness/compaction.md)
+- [引き継ぎメモ：コンパクションの要約の見出しと、AIを使わない処理を5つのハーネスで比較](docs/harness/compaction-summary.md)
