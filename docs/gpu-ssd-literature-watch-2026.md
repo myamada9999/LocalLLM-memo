@@ -72,6 +72,12 @@
 - 概要: GPU-issued NVMe I/Oと512B random readを対象とするSSD emulator。分散NVMe queue処理、Intel DSAによる転送、timing model更新の集約により実機GPU上で最大40 MIOPSを評価し、vector searchのend-to-end性能も検証。
 - 評価: S
 
+### SlipStream: Enabling HBF for GPU Systems by Mitigating the Latency and SRAM Overheads
+- 公開日: 2026-11-10
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.14776)
+- 概要: GPUのHBF（NAND Flash）からの4KB page読出しを、LLM kernelの需要順にstaging warpが先読みするsoftware-hardware協調prefetch方式。約20µsのHBF read latencyとSRAM buffer/追跡状態の増大を抑え、40MB bufferで理想HBF性能の92.4%を達成。HPCA 2027採録予定。
+- 評価: S
+
 ## A
 
 ### GIDS: Accelerating Sampling and Aggregation Operations in GNN Frameworks with GPU Initiated Direct Storage Accesses
@@ -258,6 +264,18 @@
 - 公開日: 2026-11-09
 - リンク: [一次資料 / 公式資料](https://blog.lmcache.ai/en/2026/11/09/lmcache-xpu-io-lmcache-meets-gpu-direct-storage/)
 - 概要: LMCacheとxPU-IO Phoenixの公式技術解説。GPU memoryをLinux I/O stackの直接DMA対象にするPhoenixのZONE_DEVICE、GPU BAR mapping、io_uring batch I/O、stream-ordered I/Oを詳述。8×H20 GPUと4台NVMe SSDのKV Cache復元評価で、DRAM+SSD構成比2.9倍の同時要求数を5秒TTFT目標下で実現。CPU発行のI/O control pathは残るためGPU-issued NVMeとは異なる。
+- 評価: A
+
+### The Storage View Of KV Cache: Characterizing Cache Behavior Across LLM Workloads
+- 公開日: 2026-11-06
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.10178)
+- 概要: GPU HBM、host DRAM、SSD、remote storageに跨るKV Cacheのreuse/lifetime/footprintを11種の実運用・公開traceでblock単位に分析。workload ID、session ID、session完了の3信号によるtier配置・回収を提案し、session内hitを最大22%保持改善、不要な保持を最大40%削減。
+- 評価: A
+
+### DUAL-BLADE: Dual-Path NVMe-Direct KV-Cache Offloading for Edge LLM Inference
+- 公開日: 2026-04-29
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2604.26557)
+- 概要: Edge LLMのKV Cacheをpage cache経由とfilesystem bypassのNVMe-direct LBA経由に動的配置し、storage I/OとGPU DMAをpipeline化。memory pressure時のcache thrashingとI/O overheadを削減し、prefill/decode latencyを最大33.1%/42.4%低減。GPU-issued NVMeではなくCPU側I/O経路を最適化。
 - 評価: A
 
 ## B
