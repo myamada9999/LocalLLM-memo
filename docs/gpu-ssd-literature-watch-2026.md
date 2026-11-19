@@ -78,6 +78,12 @@
 - 概要: GPUのHBF（NAND Flash）からの4KB page読出しを、LLM kernelの需要順にstaging warpが先読みするsoftware-hardware協調prefetch方式。約20µsのHBF read latencyとSRAM buffer/追跡状態の増大を抑え、40MB bufferで理想HBF性能の92.4%を達成。HPCA 2027採録予定。
 - 評価: S
 
+### GNoF: A Low-SM-Overhead GPU-Native NVMe-over-Fabrics Completion Path for Data-Intensive GPU Workloads
+- 公開日: 2026-11-16
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.21288)
+- 概要: GPUがNVMe-oF/RDMA command生成、NIC doorbell操作、completion処理を直接実行するremote flash I/O方式。doorbell集約、batched CQ polling、GPU page cacheでCPU control-pathとSM spin-waitを抑制し、200Gb/s InfiniBandで4KB read最大1.77 MIOPS、host CPU使用率0.37%、SM占有約1%を報告。BaM local SSDおよびBlueField-3経由方式とも比較し、SSD firmware変更不要。
+- 評価: S
+
 ## A
 
 ### GIDS: Accelerating Sampling and Aggregation Operations in GNN Frameworks with GPU Initiated Direct Storage Accesses
