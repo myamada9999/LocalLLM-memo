@@ -284,6 +284,12 @@
 - 概要: Edge LLMのKV Cacheをpage cache経由とfilesystem bypassのNVMe-direct LBA経由に動的配置し、storage I/OとGPU DMAをpipeline化。memory pressure時のcache thrashingとI/O overheadを削減し、prefill/decode latencyを最大33.1%/42.4%低減。GPU-issued NVMeではなくCPU側I/O経路を最適化。
 - 評価: A
 
+### TripleKV: Predict, Prefetch, Protect -- KV Cache Management for AI Agents
+- 公開日: 2026-11-18
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.25112)
+- 概要: Agentic LLM向けにGPU HBM・host DRAM・NVMe SSDの3階層KV Cacheを管理。tool実行終了時刻を予測してSSDからDRAMへ先読みし、DRAMの重複保持とevictionを最適化する。critical-path SSD readを要するrequest比率を45〜76%から10%未満に低減し、P95 TTFTを最大49%削減。GPU-issued NVMeではなくSSD I/Oのタイミングとtier配置を最適化。
+- 評価: A
+
 ## B
 
 ### Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute
