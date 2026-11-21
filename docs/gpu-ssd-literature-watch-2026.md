@@ -339,3 +339,9 @@
 - リンク: [一次資料 / 公式資料](https://mlcommons.org/2026/09/mlperf-storage-v3-0-results/)
 - 概要: Storage benchmarkにKV CacheやVector Database系workloadを追加し、AI storage workloadの標準評価範囲を拡張したbenchmark suite。
 - 評価: B
+
+### NVMe LBA Access Control for GPU-Direct Storage in AI/HPC Workloads
+- 公開日: 2026-05-12
+- リンク: [一次資料 / 公式資料](https://www.youtube.com/watch?v=9NuEzN1dR8c)
+- 概要: SNIA SDC: StorageAI 2026のNVIDIA技術講演。SCADA等のGPU-direct NVMeアクセスでOSのアクセス制御を迂回する問題に対し、NVMe namespace内のLBA range単位でhardware-enforcedな書込み保護と動的なrange再割当てを行う提案。複数GPU/hostによるSSD共有とGPU job preemptionを対象とする。
+- 評価: B
