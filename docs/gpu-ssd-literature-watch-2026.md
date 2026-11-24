@@ -290,6 +290,12 @@
 - 概要: Agentic LLM向けにGPU HBM・host DRAM・NVMe SSDの3階層KV Cacheを管理。tool実行終了時刻を予測してSSDからDRAMへ先読みし、DRAMの重複保持とevictionを最適化する。critical-path SSD readを要するrequest比率を45〜76%から10%未満に低減し、P95 TTFTを最大49%削減。GPU-issued NVMeではなくSSD I/Oのタイミングとtier配置を最適化。
 - 評価: A
 
+### Skip the DRAM Tier: MoRI UMBP Runs the Agentic KV Cache on NVMe
+- 公開日: 2026-11-23
+- リンク: [一次資料 / 公式資料](https://vllm.ai/blog/2026-11-23-skip-the-dram-tier)
+- 概要: AMD MI355XとvLLMのMoRI UMBPで、DRAMを永続的なKV Cache階層として使わずNVMe SSDに保存する構成を実機評価。同容量のDRAM poolと比べKimi-K3のthroughput差は1%以内。DRAMは書込みbufferと読出しstagingに限定され、GPU-issued NVMe方式ではない。SSD容量・書込み負荷・費用も評価。
+- 評価: A
+
 ## B
 
 ### Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute
