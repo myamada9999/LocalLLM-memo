@@ -296,6 +296,18 @@
 - 概要: AMD MI355XとvLLMのMoRI UMBPで、DRAMを永続的なKV Cache階層として使わずNVMe SSDに保存する構成を実機評価。同容量のDRAM poolと比べKimi-K3のthroughput差は1%以内。DRAMは書込みbufferと読出しstagingに限定され、GPU-issued NVMe方式ではない。SSD容量・書込み負荷・費用も評価。
 - 評価: A
 
+### LoomKV: Lossless KV Cache Compression from GPU Memory to SSD for LLM Serving
+- 公開日: 2026-11-24
+- リンク: [一次資料 / 公式資料](https://arxiv.org/abs/2611.32954)
+- 概要: LMCache/vLLMでGPU・DRAM・SSD間のKV Cacheを可逆圧縮し、GPU上の分散pageへ直接展開する方式。BF16 KVの保存量を約71%に削減し、外部tierの容量不足領域でgoodputを2.7〜3.6倍に改善。SSDからDRAMへのprefetchを利用し、GPU-issued NVMe方式ではない。
+- 評価: A
+
+### GDSight: Per-Operation Cross-Layer Attribution for GPUDirect Storage
+- 公開日: 2026-11（SC26発表: 11月16日）
+- リンク: [一次資料 / 公式資料](https://sc26.conference-program.com/presentation/?id=ws_pdsw125&sess=sess129)
+- 概要: eBPFと物理アドレスによる対応付けで、cuFile/POSIXの操作とNVMe commandを非同期I/Oでも追跡するGDS解析方式。KvikIO、NIXL、HDF5で未検出のfallback、4倍のdevice I/O増幅、22倍のtail latency増大を特定。GPU-issued NVMeの実装ではなく既存GDSの診断技術。
+- 評価: A
+
 ## B
 
 ### Real Long-Term Memory for AI: A 50-Million-Token Window That Is Faster and Cheaper Than Recompute
